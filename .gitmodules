@@ -1,0 +1,3 @@
+[submodule "beamng-lua-stubs"]
+	path = beamng-lua-stubs
+	url = https://github.com/aethyriion/beamng-lua-stubs
