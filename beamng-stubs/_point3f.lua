@@ -4,4 +4,13 @@
 
 ---@meta
 
----@alias Point3F vec3
+Point3F = vec3
+
+--- Creates a new 3D vector
+--- @description Point3F
+--- @example local point = Point3F(1, 2, 3)
+---@param x number -- X component
+---@param y number -- Y component
+---@param z number -- Z component
+---@return Point3F -- The new vector
+function Point3F(x, y, z) end

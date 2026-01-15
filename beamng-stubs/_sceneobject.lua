@@ -4,11 +4,11 @@
 ---@meta
 
 ---@class SceneObject : SimObject
----@field public position MatrixF Transform matrix (use :getColumn(3) for world position)
----@field public rotation QuatF Rotation quaternion
----@field public scale Point3F Scale vector
----@field public transform MatrixF Full transformation matrix (alias for position)
----@field public instanceColor ColorF Instance color for material tinting
+---@field public position MatrixF
+---@field public rotation QuatF
+---@field public scale Point3F
+---@field public transform MatrixF
+---@field public instanceColor ColorF
 local SceneObject = {}
 
 --- Gets the world position of this object

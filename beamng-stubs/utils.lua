@@ -38,3 +38,10 @@ function TriggerServerEvent(event, data) end
 --- @param extension table|string -- Extension table (M) or extension name string
 --- @param unloadMode "auto"|"manual" -- "auto" (default): unloaded on map switch; "manual": stays loaded
 function setExtensionUnloadMode(extension, unloadMode) end
+
+--- String
+--- @description Wraps a Lua string for C++ interop (used for file paths, debug text, etc.)
+--- @example obj.fileName = String('/art/sound/environment/amb_rain.ogg')
+--- @param str string -- The string to wrap
+--- @return string -- Wrapped string for engine use
+function String(str) end
