@@ -1,0 +1,18 @@
+# class SimSet
+
+
+- supers: SimObject
+
+
+
+
+
+
+
+
+
+
+---
+
+
+

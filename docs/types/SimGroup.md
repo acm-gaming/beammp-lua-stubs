@@ -1,0 +1,18 @@
+# class SimGroup
+
+
+- supers: SimObject
+
+
+
+
+
+
+
+
+
+
+---
+
+
+

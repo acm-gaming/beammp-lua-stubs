@@ -31,3 +31,10 @@ function AddEventHandler(event, handler) end
 --- @param data any -- Optional payload (often a string or table)
 --- @return nil
 function TriggerServerEvent(event, data) end
+
+--- setExtensionUnloadMode
+--- @description Controls whether an extension is automatically unloaded on map changes
+--- @example setExtensionUnloadMode(M, "manual")  -- Keep extension loaded across levels
+--- @param extension table|string -- Extension table (M) or extension name string
+--- @param unloadMode "auto"|"manual" -- "auto" (default): unloaded on map switch; "manual": stays loaded
+function setExtensionUnloadMode(extension, unloadMode) end

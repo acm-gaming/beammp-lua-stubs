@@ -14,7 +14,7 @@ guihooks = {}
 ---@param firstValue table|nil -- optional first series entry
 ---@param ... table -- additional series entries {key, value, scale?, unit?, renderNegatives?, colorRGBA?}
 ---@return table values -- table of normalized series sent
-function guihooks:graph(firstValue, ...) end
+function guihooks.graph(firstValue, ...) end
 
 --- message
 --- @occurrences 89
@@ -23,34 +23,35 @@ function guihooks:graph(firstValue, ...) end
 ---@param category integer
 ---@param icon boolean
 ---@return nil
-function guihooks:message(message, ttl, category, icon) end
+function guihooks.message(message, ttl, category, icon) end
     
 --- queueStream
 --- @occurrences 22
 ---@param streamName string
 ---@param data any
 ---@return nil
-function guihooks:queueStream(streamName, data) end
+function guihooks.queueStream(streamName, data) end
 
 --- reset
 --- @occurrences 1
 ---@return nil
-function guihooks:reset() end
+function guihooks.reset() end
 
 --- sendStreams
 --- @occurrences 2
 ---@return nil
-function guihooks:sendStreams() end
+function guihooks.sendStreams() end
 
 --- trigger
 --- @occurrences 671
 ---@param eventName string
----@param ... any
+---@param data any
 ---@return nil
-function guihooks:trigger(eventName, ...) end
+function guihooks.trigger(eventName, data) end
 
 --- triggerRawJS
 --- @occurrences 2
 ---@param jsCode string
 ---@return nil
-function guihooks:triggerRawJS(jsCode) end
+function guihooks.triggerRawJS(jsCode) end
+
