@@ -19,4 +19,6 @@ function setExtensionUnloadMode(
 
 
 setExtensionUnloadMode
+Controls whether an extension is automatically unloaded on map changes
+example:  setExtensionUnloadMode(M, "manual")  -- Keep extension loaded across levels
 

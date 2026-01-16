@@ -20,15 +20,15 @@ function settings:exit() end
 function settings:finalizeInit() end
 
 --- getUsedMaterialNames
---- @description Returns a list of material names currently in use
---- @example local materialsUsed = settings.getUsedMaterialNames()
+-- Returns a list of material names currently in use
+-- example:  local materialsUsed = settings.getUsedMaterialNames()
 --- @occurrences 2
 ---@return table -- Array of material name strings
 function settings:getUsedMaterialNames() end
 
 --- getValue
---- @description Gets a setting value by key, returning defaultValue if not set
---- @example local target = settings.getValue('uiUnitLength')
+-- Gets a setting value by key, returning defaultValue if not set
+-- example:  local target = settings.getValue('uiUnitLength')
 --- @occurrences 256
 ---@param key string -- Setting key name
 ---@param defaultValue any -- Default value if setting not found
@@ -85,8 +85,8 @@ function settings:setState(newState, ignoreCache) end
 function settings:setValue(key, value, ignoreCache) end
 
 --- settingsChanged
---- @description Invalidates settings cache, called when settings change
---- @example settings.settingsChanged()
+-- Invalidates settings cache, called when settings change
+-- example:  settings.settingsChanged()
 --- @occurrences 1
 ---@return nil
 function settings:settingsChanged() end
@@ -100,14 +100,14 @@ function settings:settingsChanged() end
 function settings:settingsTick(dtReal, dtSim, dtRaw) end
 
 --- updateMaterials
---- @description Updates the materials map for the current vehicle
---- @example settings.updateMaterials()
+-- Updates the materials map for the current vehicle
+-- example:  settings.updateMaterials()
 --- @occurrences 2
 ---@return nil
 function settings:updateMaterials() end
 
 --- write
---- @description Writes settings to persistent storage
+-- Writes settings to persistent storage
 --- @occurrences 2
 ---@return nil
 function settings:write() end

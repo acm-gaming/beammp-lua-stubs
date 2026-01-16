@@ -10,8 +10,8 @@
 UI = {}
 
 --- buttonImg
---- @description Creates an image button in the editor UI
---- @example UI.buttonImg('joints_up', 'link', {30,20}, color)
+-- Creates an image button in the editor UI
+-- example:  UI.buttonImg('joints_up', 'link', {30,20}, color)
 --- @occurrences 7
 ---@param id string -- Unique button ID
 ---@param icon string -- Icon name
@@ -22,8 +22,8 @@ UI = {}
 function UI:buttonImg(id, icon, size, color, callback) end
 
 --- buttonTxt
---- @description Creates a text button in the editor UI
---- @example UI.buttonTxt('save', 'Save File', 100, 30)
+-- Creates a text button in the editor UI
+-- example:  UI.buttonTxt('save', 'Save File', 100, 30)
 --- @occurrences 5
 ---@param id string -- Unique button ID
 ---@param label string -- Button text
@@ -33,8 +33,8 @@ function UI:buttonImg(id, icon, size, color, callback) end
 function UI:buttonTxt(id, label, width, height) end
 
 --- check
---- @description Creates a checkbox in the editor UI
---- @example UI.check('', 'jpart_pick', v.sel)
+-- Creates a checkbox in the editor UI
+-- example:  UI.check('', 'jpart_pick', v.sel)
 --- @occurrences 5
 ---@param label string -- Checkbox label
 ---@param id string -- Unique checkbox ID
@@ -43,8 +43,8 @@ function UI:buttonTxt(id, label, width, height) end
 function UI:check(label, id, checked) end
 
 --- columnRight
---- @description Aligns content to the right side of a column
---- @example UI.columnRight(100, true)
+-- Aligns content to the right side of a column
+-- example:  UI.columnRight(100, true)
 --- @occurrences 1
 ---@param width integer -- Column width
 ---@param separator boolean -- Whether to draw separator
@@ -52,8 +52,8 @@ function UI:check(label, id, checked) end
 function UI:columnRight(width, separator) end
 
 --- combo
---- @description Creates a combo dropdown in the editor UI
---- @example UI.combo('Select', 'combo_id', items, currentIndex)
+-- Creates a combo dropdown in the editor UI
+-- example:  UI.combo('Select', 'combo_id', items, currentIndex)
 --- @occurrences 1
 ---@param label string -- Combo label
 ---@param id string -- Unique combo ID
@@ -63,8 +63,8 @@ function UI:columnRight(width, separator) end
 function UI:combo(label, id, items, currentIndex) end
 
 --- control
---- @description Creates a generic control element
---- @example UI.control(type, id, value, config)
+-- Creates a generic control element
+-- example:  UI.control(type, id, value, config)
 --- @occurrences 1
 ---@param controlType any -- Type of control
 ---@param id any -- Control ID
@@ -74,16 +74,16 @@ function UI:combo(label, id, items, currentIndex) end
 function UI:control(controlType, id, value, config) end
 
 --- hint
---- @description Displays a hint/tooltip in the UI
---- @example UI.hint('Click to save')
+-- Displays a hint/tooltip in the UI
+-- example:  UI.hint('Click to save')
 --- @occurrences 4
 ---@param text string|any -- Hint text to display
 ---@return nil
 function UI:hint(text) end
 
 --- inject
---- @description Injects UI elements into a container
---- @example UI.inject(container, elements)
+-- Injects UI elements into a container
+-- example:  UI.inject(container, elements)
 --- @occurrences 2
 ---@param container table -- Target container
 ---@param elements any -- Elements to inject
@@ -91,8 +91,8 @@ function UI:hint(text) end
 function UI:inject(container, elements) end
 
 --- slider
---- @description Creates a slider control in the editor UI
---- @example UI.slider('Rotate', 'piece_rot', {-180,180})
+-- Creates a slider control in the editor UI
+-- example:  UI.slider('Rotate', 'piece_rot', {-180,180})
 --- @occurrences 2
 ---@param label string -- Slider label
 ---@param id string -- Unique slider ID
@@ -102,8 +102,8 @@ function UI:inject(container, elements) end
 function UI:slider(label, id, range, flags) end
 
 --- sliderC
---- @description Creates a centered slider control in the editor UI
---- @example UI.sliderC('Scale', 'scale_slider', {0,100})
+-- Creates a centered slider control in the editor UI
+-- example:  UI.sliderC('Scale', 'scale_slider', {0,100})
 --- @occurrences 2
 ---@param label string -- Slider label
 ---@param id string -- Unique slider ID
@@ -113,8 +113,8 @@ function UI:slider(label, id, range, flags) end
 function UI:sliderC(label, id, range, flags) end
 
 --- table
---- @description Creates a table/grid in the editor UI
---- @example UI.table('data_table', columns, rows, config)
+-- Creates a table/grid in the editor UI
+-- example:  UI.table('data_table', columns, rows, config)
 --- @occurrences 6
 ---@param id string -- Unique table ID
 ---@param columns any -- Column definitions
@@ -124,8 +124,8 @@ function UI:sliderC(label, id, range, flags) end
 function UI:table(id, columns, rows, config) end
 
 --- tree2ui
---- @description Converts a tree structure to UI elements
---- @example UI.tree2ui(treeData)
+-- Converts a tree structure to UI elements
+-- example:  UI.tree2ui(treeData)
 --- @occurrences 3
 ---@param tree any -- Tree structure to convert
 ---@return nil

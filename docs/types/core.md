@@ -35,6 +35,8 @@ function core.compression(ssl: userdata)
 
 
 compression
+Gets the compression method used by an SSL connection
+example:  local comp, err = core.compression(ssl)
 
 
 
@@ -42,8 +44,6 @@ compression
 
 
 
-@description Gets the compression method used by an SSL connection
-@example local comp, err = core.compression(ssl)
 @occurrences 1
 
 
@@ -60,6 +60,8 @@ function core.copyright() ->  string
 
 
 copyright
+Returns the LuaSec copyright information
+example:  local info = core.copyright()
 
 
 
@@ -67,8 +69,6 @@ copyright
 
 
 
-@description Returns the LuaSec copyright information
-@example local info = core.copyright()
 @occurrences 1
 
 
@@ -92,6 +92,8 @@ function core.create(ctx: userdata)
 
 
 create
+Creates a new SSL connection from a context
+example:  local s, msg = core.create(ctx)
 
 
 
@@ -99,8 +101,6 @@ create
 
 
 
-@description Creates a new SSL connection from a context
-@example local s, msg = core.create(ctx)
 @occurrences 1
 
 
@@ -130,6 +130,8 @@ function core.info(ssl: userdata)
 
 
 info
+Gets information about an SSL connection
+example:  local str, bits, algbits, protocol = core.info(ssl)
 
 
 
@@ -137,8 +139,6 @@ info
 
 
 
-@description Gets information about an SSL connection
-@example local str, bits, algbits, protocol = core.info(ssl)
 @occurrences 1
 
 
@@ -160,6 +160,8 @@ function core.setfd(
 
 
 setfd
+Sets the file descriptor for an SSL connection
+example:  core.setfd(s, sock:getfd())
 
 
 
@@ -167,8 +169,6 @@ setfd
 
 
 
-@description Sets the file descriptor for an SSL connection
-@example core.setfd(s, sock:getfd())
 @occurrences 1
 
 
@@ -190,6 +190,8 @@ function core.setmethod(
 
 
 setmethod
+Sets the SSL method for a context
+example:  core.setmethod(ctx, 'TLSv1_2')
 
 
 
@@ -197,8 +199,6 @@ setmethod
 
 
 
-@description Sets the SSL method for a context
-@example core.setmethod(ctx, 'TLSv1_2')
 @occurrences 1
 
 

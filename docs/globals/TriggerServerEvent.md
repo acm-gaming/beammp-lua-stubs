@@ -19,4 +19,6 @@ function TriggerServerEvent(
 
 
 TriggerServerEvent
+Fires a server-side event with optional payload
+example:  TriggerServerEvent('beammp:syncState', jsonEncode(state))
 

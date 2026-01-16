@@ -14,4 +14,6 @@ function Box3F() ->  Box3F
 
 
 Creates a new axis-aligned bounding box
+Creates a new Box3F for axis-aligned bounding box operations
+example:  local box = Box3F()
 

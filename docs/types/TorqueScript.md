@@ -30,6 +30,8 @@ function TorqueScript.eval(code: string) ->  any
 
 
 eval
+Evaluates TorqueScript code and returns the result
+example:  TorqueScript.eval('return getSomeValue();')
 
 
 
@@ -37,8 +39,6 @@ eval
 
 
 
-@description Evaluates TorqueScript code and returns the result
-@example TorqueScript.eval('return getSomeValue();')
 @occurrences 13
 
 
@@ -57,6 +57,8 @@ function TorqueScript.exec(filePath: string) ->  any
 
 
 exec
+Executes a TorqueScript file
+example:  TorqueScript.exec(filePath)
 
 
 
@@ -64,8 +66,6 @@ exec
 
 
 
-@description Executes a TorqueScript file
-@example TorqueScript.exec(filePath)
 @occurrences 2
 
 

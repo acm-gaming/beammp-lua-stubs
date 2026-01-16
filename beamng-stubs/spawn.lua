@@ -10,9 +10,9 @@
 spawn = {}
 
 --- calculateRelativeVehiclePlacement
---- @description Builds a transform that aligns two couplers between vehicles
+-- Builds a transform that aligns two couplers between vehicles
 --- @occurrences 1
---- @example local mat = spawn.calculateRelativeVehiclePlacement(transform0, coupler0, coupler1)
+-- example:  local mat = spawn.calculateRelativeVehiclePlacement(transform0, coupler0, coupler1)
 ---@param transform0 MatrixF
 ---@param coupler0_offset vec3
 ---@param coupler1_offset vec3
@@ -21,23 +21,23 @@ spawn = {}
 function spawn:calculateRelativeVehiclePlacement(transform0, coupler0_offset, coupler1_offset, rotOffset) end
 
 --- clearCache
---- @description Clears per-frame spawn bounding box cache
+-- Clears per-frame spawn bounding box cache
 --- @occurrences 1
 ---@return nil
 function spawn:clearCache() end
 
 --- pickSpawnPoint
---- @description Returns a valid spawn point for a player/camera
+-- Returns a valid spawn point for a player/camera
 --- @occurrences 1
---- @example local sp = spawn.pickSpawnPoint("player")
+-- example:  local sp = spawn.pickSpawnPoint("player")
 ---@param spawnName string
 ---@return SceneObject|nil
 function spawn:pickSpawnPoint(spawnName) end
 
 --- placeTrailer
---- @description Positions a trailer relative to a vehicle using coupler offsets
+-- Positions a trailer relative to a vehicle using coupler offsets
 --- @occurrences 3
---- @example spawn.placeTrailer(vehId, vehCouplerOffset, trailerReg[vehId].trailerId, trailerCouplerOffset, vehCouplerTag)
+-- example:  spawn.placeTrailer(vehId, vehCouplerOffset, trailerReg[vehId].trailerId, trailerCouplerOffset, vehCouplerTag)
 ---@param vehId integer
 ---@param couplerOffsetVeh vec3
 ---@param trailerId integer
@@ -48,9 +48,9 @@ function spawn:pickSpawnPoint(spawnName) end
 function spawn:placeTrailer(vehId, couplerOffsetVeh, trailerId, couplerOffsetTrailer, couplerTag, rotOffset) end
 
 --- safeTeleport
---- @description Teleports a vehicle safely, avoiding collisions and optionally resetting
+-- Teleports a vehicle safely, avoiding collisions and optionally resetting
 --- @occurrences 56
---- @example safeTeleport(veh, pos, rot, nil, nil, nil, true, options.resetVehicle)
+-- example:  safeTeleport(veh, pos, rot, nil, nil, nil, true, options.resetVehicle)
 ---@param veh obj
 ---@param pos vec3
 ---@param rot quat|nil
@@ -63,7 +63,7 @@ function spawn:placeTrailer(vehId, couplerOffsetVeh, trailerId, couplerOffsetTra
 function spawn:safeTeleport(veh, pos, rot, checkOnlyStatics, visibilityPoint, removeTraffic, centeredPosition, resetVehicle) end
 
 --- setVehicleObject
---- @description Applies model, config, paint and options to a vehicle SceneObject
+-- Applies model, config, paint and options to a vehicle SceneObject
 --- @occurrences 2
 ---@param veh SceneObject
 ---@param options table
@@ -71,9 +71,9 @@ function spawn:safeTeleport(veh, pos, rot, checkOnlyStatics, visibilityPoint, re
 function spawn:setVehicleObject(veh, options) end
 
 --- spawnVehicle
---- @description Creates and registers a vehicle, then sets it up with options
+-- Creates and registers a vehicle, then sets it up with options
 --- @occurrences 12
---- @example local veh = spawn.spawnVehicle(model, partConfig, pos, rot, opt)
+-- example:  local veh = spawn.spawnVehicle(model, partConfig, pos, rot, opt)
 ---@param model string
 ---@param partConfig string|table|nil
 ---@param pos vec3|nil
@@ -83,7 +83,7 @@ function spawn:setVehicleObject(veh, options) end
 function spawn:spawnVehicle(model, partConfig, pos, rot, options) end
 
 --- teleportToLastRoad
---- @description Teleports a vehicle to its last recovery point on a nearby road
+-- Teleports a vehicle to its last recovery point on a nearby road
 --- @occurrences 4
 ---@param veh obj|nil
 ---@param options table|nil

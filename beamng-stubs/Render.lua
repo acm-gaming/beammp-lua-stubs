@@ -10,8 +10,8 @@
 render = {}
 
 --- drawBarPoints
---- @description Draws bar indicator points in the editor
---- @example render.drawBarPoints(points, config)
+-- Draws bar indicator points in the editor
+-- example:  render.drawBarPoints(points, config)
 --- @occurrences 1
 ---@param points table -- Points to draw
 ---@param config table -- Drawing configuration
@@ -19,8 +19,8 @@ render = {}
 function render:drawBarPoints(points, config) end
 
 --- drawRibLine
---- @description Draws a line between two ribbon points
---- @example render.drawRibLine(placedLeftNode, mousePos)
+-- Draws a line between two ribbon points
+-- example:  render.drawRibLine(placedLeftNode, mousePos)
 --- @occurrences 1
 ---@param startPoint vec3 -- Start position
 ---@param endPoint vec3 -- End position
@@ -28,8 +28,8 @@ function render:drawBarPoints(points, config) end
 function render:drawRibLine(startPoint, endPoint) end
 
 --- drawSphereCursor
---- @description Draws a spherical cursor at a position
---- @example render.drawSphereCursor(pos, isActive)
+-- Draws a spherical cursor at a position
+-- example:  render.drawSphereCursor(pos, isActive)
 --- @occurrences 4
 ---@param position vec3 -- Cursor position
 ---@param isActive boolean -- Whether cursor is active
@@ -37,40 +37,40 @@ function render:drawRibLine(startPoint, endPoint) end
 function render:drawSphereCursor(position, isActive) end
 
 --- drawSphereHighlight
---- @description Draws a highlighted sphere at a node position
---- @example render.drawSphereHighlight(placedLeftNode)
+-- Draws a highlighted sphere at a node position
+-- example:  render.drawSphereHighlight(placedLeftNode)
 --- @occurrences 10
 ---@param node table|vec3 -- Node or position to highlight
 ---@return nil
 function render:drawSphereHighlight(node) end
 
 --- drawSphereHighlightHover
---- @description Draws a hover-state highlighted sphere at a position
---- @example render.drawSphereHighlightHover(mousePos)
+-- Draws a hover-state highlighted sphere at a position
+-- example:  render.drawSphereHighlightHover(mousePos)
 --- @occurrences 9
 ---@param node table|vec3 -- Node or position to highlight
 ---@return nil
 function render:drawSphereHighlightHover(node) end
 
 --- drawSphereHighlightSelected
---- @description Draws a selected-state highlighted sphere at a position
---- @example render.drawSphereHighlightSelected(selectedNode)
+-- Draws a selected-state highlighted sphere at a position
+-- example:  render.drawSphereHighlightSelected(selectedNode)
 --- @occurrences 1
 ---@param node table|vec3 -- Node or position to highlight
 ---@return nil
 function render:drawSphereHighlightSelected(node) end
 
 --- drawSphereNode
---- @description Draws a sphere node marker at a position
---- @example render.drawSphereNode(placedLeftNode)
+-- Draws a sphere node marker at a position
+-- example:  render.drawSphereNode(placedLeftNode)
 --- @occurrences 7
 ---@param node table|vec3 -- Node or position to draw
 ---@return nil
 function render:drawSphereNode(node) end
 
 --- drawSplineLine
---- @description Draws a spline line between points
---- @example render.drawSplineLine(spline, config)
+-- Draws a spline line between points
+-- example:  render.drawSplineLine(spline, config)
 --- @occurrences 2
 ---@param spline table -- Spline data
 ---@param config table -- Drawing configuration
@@ -78,8 +78,8 @@ function render:drawSphereNode(node) end
 function render:drawSplineLine(spline, config) end
 
 --- drawSplineLineDull
---- @description Draws a muted/dull spline line between points
---- @example render.drawSplineLineDull(spline, config)
+-- Draws a muted/dull spline line between points
+-- example:  render.drawSplineLineDull(spline, config)
 --- @occurrences 5
 ---@param spline table -- Spline data
 ---@param config table -- Drawing configuration
@@ -87,8 +87,8 @@ function render:drawSplineLine(spline, config) end
 function render:drawSplineLineDull(spline, config) end
 
 --- handleSplineRendering
---- @description Handles rendering of splines with various options
---- @example render.handleSplineRendering(splines, camera, selection, showNodes, showLines, showPoints, highlight, editable, config)
+-- Handles rendering of splines with various options
+-- example:  render.handleSplineRendering(splines, camera, selection, showNodes, showLines, showPoints, highlight, editable, config)
 --- @occurrences 6
 ---@param splines table -- Splines to render
 ---@param camera table -- Camera data
@@ -103,176 +103,176 @@ function render:drawSplineLineDull(spline, config) end
 function render:handleSplineRendering(splines, camera, selection, showNodes, showLines, showPoints, highlight, editable, config) end
 
 --- markupAddNode
---- @description Draws markup indicating a node can be added
---- @example render.markupAddNode(position)
+-- Draws markup indicating a node can be added
+-- example:  render.markupAddNode(position)
 --- @occurrences 1
 ---@param position vec3 -- Position for add node indicator
 ---@return nil
 function render:markupAddNode(position) end
 
 --- markupAddPairLeft
---- @description Draws markup for left pair node addition
---- @example render.markupAddPairLeft(position)
+-- Draws markup for left pair node addition
+-- example:  render.markupAddPairLeft(position)
 --- @occurrences 1
 ---@param position vec3 -- Position for left pair indicator
 ---@return nil
 function render:markupAddPairLeft(position) end
 
 --- markupAddPolygonNode
---- @description Draws markup indicating a polygon node can be added
---- @example render.markupAddPolygonNode(position)
+-- Draws markup indicating a polygon node can be added
+-- example:  render.markupAddPolygonNode(position)
 --- @occurrences 1
 ---@param position vec3 -- Position for add polygon node indicator
 ---@return nil
 function render:markupAddPolygonNode(position) end
 
 --- markupAdjustBar
---- @description Draws markup for bar adjustment
---- @example render.markupAdjustBar(barData)
+-- Draws markup for bar adjustment
+-- example:  render.markupAdjustBar(barData)
 --- @occurrences 2
 ---@param barData table -- Bar data to display
 ---@return nil
 function render:markupAdjustBar(barData) end
 
 --- markupAdjustWidth
---- @description Draws markup for width adjustment indicator
---- @example render.markupAdjustWidth(widthData)
+-- Draws markup for width adjustment indicator
+-- example:  render.markupAdjustWidth(widthData)
 --- @occurrences 1
 ---@param widthData table -- Width adjustment data
 ---@return integer -- Width value
 function render:markupAdjustWidth(widthData) end
 
 --- markupDrag
---- @description Draws markup for drag operation
---- @example render.markupDrag(dragData)
+-- Draws markup for drag operation
+-- example:  render.markupDrag(dragData)
 --- @occurrences 3
 ---@param dragData table -- Drag operation data
 ---@return nil
 function render:markupDrag(dragData) end
 
 --- markupEnd
---- @description Draws markup for end point indicator
---- @example render.markupEnd(position)
+-- Draws markup for end point indicator
+-- example:  render.markupEnd(position)
 --- @occurrences 3
 ---@param position vec3 -- End position
 ---@return nil
 function render:markupEnd(position) end
 
 --- markupGraphFreeSpace
---- @description Draws markup for free space in graph
---- @example render.markupGraphFreeSpace(graphData)
+-- Draws markup for free space in graph
+-- example:  render.markupGraphFreeSpace(graphData)
 --- @occurrences 1
 ---@param graphData table -- Graph data
 ---@return nil
 function render:markupGraphFreeSpace(graphData) end
 
 --- markupGraphNodeHover
---- @description Draws markup for hovered graph node
---- @example render.markupGraphNodeHover(node)
+-- Draws markup for hovered graph node
+-- example:  render.markupGraphNodeHover(node)
 --- @occurrences 1
 ---@param node table -- Hovered node data
 ---@return nil
 function render:markupGraphNodeHover(node) end
 
 --- markupInsertNode
---- @description Draws markup for node insertion point
---- @example render.markupInsertNode(position)
+-- Draws markup for node insertion point
+-- example:  render.markupInsertNode(position)
 --- @occurrences 3
 ---@param position vec3 -- Insert position
 ---@return nil
 function render:markupInsertNode(position) end
 
 --- markupLinkedSplineCannotAdd
---- @description Draws markup indicating cannot add to linked spline
---- @example render.markupLinkedSplineCannotAdd(spline)
+-- Draws markup indicating cannot add to linked spline
+-- example:  render.markupLinkedSplineCannotAdd(spline)
 --- @occurrences 1
 ---@param spline table -- Spline data
 ---@return nil
 function render:markupLinkedSplineCannotAdd(spline) end
 
 --- markupLoopedSplineCannotAdd
---- @description Draws markup indicating cannot add to looped spline
---- @example render.markupLoopedSplineCannotAdd(spline)
+-- Draws markup indicating cannot add to looped spline
+-- example:  render.markupLoopedSplineCannotAdd(spline)
 --- @occurrences 1
 ---@param spline table -- Spline data
 ---@return nil
 function render:markupLoopedSplineCannotAdd(spline) end
 
 --- markupNode1
---- @description Draws markup for first node indicator
---- @example render.markupNode1(position)
+-- Draws markup for first node indicator
+-- example:  render.markupNode1(position)
 --- @occurrences 1
 ---@param position vec3 -- Node position
 ---@return nil
 function render:markupNode1(position) end
 
 --- markupNode2
---- @description Draws markup for second node indicator
---- @example render.markupNode2(position)
+-- Draws markup for second node indicator
+-- example:  render.markupNode2(position)
 --- @occurrences 1
 ---@param position vec3 -- Node position
 ---@return nil
 function render:markupNode2(position) end
 
 --- markupNode3
---- @description Draws markup for third node indicator
---- @example render.markupNode3(position)
+-- Draws markup for third node indicator
+-- example:  render.markupNode3(position)
 --- @occurrences 1
 ---@param position vec3 -- Node position
 ---@return nil
 function render:markupNode3(position) end
 
 --- markupPairFirstNode
---- @description Draws markup for first node of a pair
---- @example render.markupPairFirstNode(placedLeftNode)
+-- Draws markup for first node of a pair
+-- example:  render.markupPairFirstNode(placedLeftNode)
 --- @occurrences 1
 ---@param node vec3 -- First node position
 ---@return nil
 function render:markupPairFirstNode(node) end
 
 --- markupPairSecondNode
---- @description Draws markup for second node of a pair
---- @example render.markupPairSecondNode(mousePos)
+-- Draws markup for second node of a pair
+-- example:  render.markupPairSecondNode(mousePos)
 --- @occurrences 1
 ---@param node vec3 -- Second node position
 ---@return nil
 function render:markupPairSecondNode(node) end
 
 --- markupSelectOrAdd
---- @description Draws markup for select or add operation
---- @example render.markupSelectOrAdd(position)
+-- Draws markup for select or add operation
+-- example:  render.markupSelectOrAdd(position)
 --- @occurrences 1
 ---@param position vec3 -- Position for indicator
 ---@return nil
 function render:markupSelectOrAdd(position) end
 
 --- markupSelectSpline
---- @description Draws markup for spline selection
---- @example render.markupSelectSpline(spline)
+-- Draws markup for spline selection
+-- example:  render.markupSelectSpline(spline)
 --- @occurrences 2
 ---@param spline table -- Spline data
 ---@return nil
 function render:markupSelectSpline(spline) end
 
 --- markupSelectedSplineDisabled
---- @description Draws markup for disabled selected spline
---- @example render.markupSelectedSplineDisabled(spline)
+-- Draws markup for disabled selected spline
+-- example:  render.markupSelectedSplineDisabled(spline)
 --- @occurrences 1
 ---@param spline table -- Spline data
 ---@return nil
 function render:markupSelectedSplineDisabled(spline) end
 
 --- markupStart
---- @description Draws markup for start point indicator
---- @example render.markupStart(position)
+-- Draws markup for start point indicator
+-- example:  render.markupStart(position)
 --- @occurrences 4
 ---@param position vec3 -- Start position
 ---@return nil
 function render:markupStart(position) end
 
 --- markupWidthDisplay
---- @description Draws markup displaying width value
---- @example render.markupWidthDisplay(position, width)
+-- Draws markup displaying width value
+-- example:  render.markupWidthDisplay(position, width)
 --- @occurrences 2
 ---@param position vec3 -- Display position
 ---@param width number -- Width value to display
@@ -280,8 +280,8 @@ function render:markupStart(position) end
 function render:markupWidthDisplay(position, width) end
 
 --- renderCandidateJoin
---- @description Renders a candidate join point between splines
---- @example render.renderCandidateJoin(spline1, spline2)
+-- Renders a candidate join point between splines
+-- example:  render.renderCandidateJoin(spline1, spline2)
 --- @occurrences 4
 ---@param spline1 table -- First spline data
 ---@param spline2 table -- Second spline data
@@ -289,8 +289,8 @@ function render:markupWidthDisplay(position, width) end
 function render:renderCandidateJoin(spline1, spline2) end
 
 --- renderCandidateLoop
---- @description Renders a candidate loop closure point
---- @example render.renderCandidateLoop(spline, config)
+-- Renders a candidate loop closure point
+-- example:  render.renderCandidateLoop(spline, config)
 --- @occurrences 1
 ---@param spline table -- Spline data
 ---@param config table -- Configuration
@@ -298,8 +298,8 @@ function render:renderCandidateJoin(spline1, spline2) end
 function render:renderCandidateLoop(spline, config) end
 
 --- renderChosenNodes
---- @description Renders the currently chosen/selected nodes
---- @example render.renderChosenNodes(nodes, config)
+-- Renders the currently chosen/selected nodes
+-- example:  render.renderChosenNodes(nodes, config)
 --- @occurrences 1
 ---@param nodes table -- Selected nodes
 ---@param config table -- Configuration
@@ -307,16 +307,16 @@ function render:renderCandidateLoop(spline, config) end
 function render:renderChosenNodes(nodes, config) end
 
 --- renderDrivePathSurface
---- @description Renders a drive path surface
---- @example render.renderDrivePathSurface(pathData)
+-- Renders a drive path surface
+-- example:  render.renderDrivePathSurface(pathData)
 --- @occurrences 1
 ---@param pathData table -- Drive path data
 ---@return nil
 function render:renderDrivePathSurface(pathData) end
 
 --- renderGraphPath
---- @description Renders a graph navigation path
---- @example render.renderGraphPath(path, config)
+-- Renders a graph navigation path
+-- example:  render.renderGraphPath(path, config)
 --- @occurrences 1
 ---@param path table -- Path data
 ---@param config table -- Configuration
@@ -324,8 +324,8 @@ function render:renderDrivePathSurface(pathData) end
 function render:renderGraphPath(path, config) end
 
 --- renderHomologatedSurface
---- @description Renders a homologated surface area
---- @example render.renderHomologatedSurface(surface, config)
+-- Renders a homologated surface area
+-- example:  render.renderHomologatedSurface(surface, config)
 --- @occurrences 1
 ---@param surface table -- Surface data
 ---@param config table -- Configuration
@@ -333,8 +333,8 @@ function render:renderGraphPath(path, config) end
 function render:renderHomologatedSurface(surface, config) end
 
 --- renderLayer
---- @description Renders a layer with specified options
---- @example render.renderLayer(layer, camera, visible, priority)
+-- Renders a layer with specified options
+-- example:  render.renderLayer(layer, camera, visible, priority)
 --- @occurrences 1
 ---@param layer table -- Layer data
 ---@param camera table -- Camera data
@@ -344,8 +344,8 @@ function render:renderHomologatedSurface(surface, config) end
 function render:renderLayer(layer, camera, visible, priority) end
 
 --- renderMasterLayer
---- @description Renders the master spline layer
---- @example render.renderMasterLayer(layer, camera, selection, priority)
+-- Renders the master spline layer
+-- example:  render.renderMasterLayer(layer, camera, selection, priority)
 --- @occurrences 1
 ---@param layer table -- Layer data
 ---@param camera table -- Camera data
@@ -355,16 +355,16 @@ function render:renderLayer(layer, camera, visible, priority) end
 function render:renderMasterLayer(layer, camera, selection, priority) end
 
 --- renderNavGraph
---- @description Renders the navigation graph
---- @example render.renderNavGraph(graphData)
+-- Renders the navigation graph
+-- example:  render.renderNavGraph(graphData)
 --- @occurrences 1
 ---@param graphData table -- Navigation graph data
 ---@return nil
 function render:renderNavGraph(graphData) end
 
 --- renderPreviewRibbon
---- @description Renders a preview of a ribbon
---- @example render.renderPreviewRibbon(ribbon, config)
+-- Renders a preview of a ribbon
+-- example:  render.renderPreviewRibbon(ribbon, config)
 --- @occurrences 1
 ---@param ribbon table -- Ribbon data
 ---@param config table -- Configuration
@@ -372,8 +372,8 @@ function render:renderNavGraph(graphData) end
 function render:renderPreviewRibbon(ribbon, config) end
 
 --- renderRibbon
---- @description Renders a ribbon mesh
---- @example render.renderRibbon(ribbon, material, texture, normals, uvs, wireframe)
+-- Renders a ribbon mesh
+-- example:  render.renderRibbon(ribbon, material, texture, normals, uvs, wireframe)
 --- @occurrences 1
 ---@param ribbon table -- Ribbon data
 ---@param material table -- Material data
@@ -385,8 +385,8 @@ function render:renderPreviewRibbon(ribbon, config) end
 function render:renderRibbon(ribbon, material, texture, normals, uvs, wireframe) end
 
 --- renderRibbonWireFrame
---- @description Renders a ribbon as wireframe
---- @example render.renderRibbonWireFrame(ribbon, config, lineWidth)
+-- Renders a ribbon as wireframe
+-- example:  render.renderRibbonWireFrame(ribbon, config, lineWidth)
 --- @occurrences 3
 ---@param ribbon table -- Ribbon data
 ---@param config table -- Configuration
@@ -395,16 +395,16 @@ function render:renderRibbon(ribbon, material, texture, normals, uvs, wireframe)
 function render:renderRibbonWireFrame(ribbon, config, lineWidth) end
 
 --- renderShells
---- @description Renders shell meshes for splines
---- @example render.renderShells(splineMgr.getMasterSplines())
+-- Renders shell meshes for splines
+-- example:  render.renderShells(splineMgr.getMasterSplines())
 --- @occurrences 7
 ---@param splines table -- Array of splines to render shells for
 ---@return nil
 function render:renderShells(splines) end
 
 --- renderSplinePolylines
---- @description Renders spline polylines
---- @example render.renderSplinePolylines(splines, config)
+-- Renders spline polylines
+-- example:  render.renderSplinePolylines(splines, config)
 --- @occurrences 4
 ---@param splines table -- Splines to render
 ---@param config table -- Configuration
@@ -412,8 +412,8 @@ function render:renderShells(splines) end
 function render:renderSplinePolylines(splines, config) end
 
 --- renderVelocities
---- @description Renders velocity vectors
---- @example render.renderVelocities(data, showLabels, scale, color)
+-- Renders velocity vectors
+-- example:  render.renderVelocities(data, showLabels, scale, color)
 --- @occurrences 2
 ---@param data table -- Velocity data
 ---@param showLabels boolean -- Whether to show labels
@@ -423,8 +423,8 @@ function render:renderSplinePolylines(splines, config) end
 function render:renderVelocities(data, showLabels, scale, color) end
 
 --- renderVelocitiesGraph
---- @description Renders a velocity graph visualization
---- @example render.renderVelocitiesGraph(graph, position, size, showGrid)
+-- Renders a velocity graph visualization
+-- example:  render.renderVelocitiesGraph(graph, position, size, showGrid)
 --- @occurrences 1
 ---@param graph table -- Graph data
 ---@param position table -- Screen position
@@ -434,8 +434,8 @@ function render:renderVelocities(data, showLabels, scale, color) end
 function render:renderVelocitiesGraph(graph, position, size, showGrid) end
 
 --- renderWireframeRibbons
---- @description Renders all ribbons as wireframe
---- @example render.renderWireframeRibbons(ribbons)
+-- Renders all ribbons as wireframe
+-- example:  render.renderWireframeRibbons(ribbons)
 --- @occurrences 1
 ---@param ribbons table -- Ribbons to render
 ---@return nil

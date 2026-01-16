@@ -10,16 +10,16 @@
 extensions = {}
 
 --- addModulePath
---- @description Adds a directory to the module search path for extensions
---- @example extensions.addModulePath('lua/ge/extensions/mymod')
+-- Adds a directory to the module search path for extensions
+-- example:  extensions.addModulePath('lua/ge/extensions/mymod')
 --- @occurrences 6
 ---@param directory string -- Directory path to add
 ---@return nil
 function extensions:addModulePath(directory) end
 
 --- deserialize
---- @description Restores extension state from serialized data
---- @example extensions.deserialize(savedData)
+-- Restores extension state from serialized data
+-- example:  extensions.deserialize(savedData)
 --- @occurrences 1
 ---@param data table -- Serialized data to restore
 ---@param filter table|nil -- Optional filter for extensions to restore
@@ -27,32 +27,32 @@ function extensions:addModulePath(directory) end
 function extensions:deserialize(data, filter) end
 
 --- disableSerialization
---- @description Disables serialization for specified extensions
---- @example extensions.disableSerialization('myExtension')
+-- Disables serialization for specified extensions
+-- example:  extensions.disableSerialization('myExtension')
 --- @occurrences 1
 ---@param ... string|string[] -- extension names to skip
 ---@return nil
 function extensions:disableSerialization(...) end
 
 --- getLoadedExtensionsNames
---- @description Gets list of currently loaded extension names
---- @example local names = extensions.getLoadedExtensionsNames()
+-- Gets list of currently loaded extension names
+-- example:  local names = extensions.getLoadedExtensionsNames()
 --- @occurrences 5
 ---@param excludeVirtual boolean|nil -- Exclude virtual extensions
 ---@return table<string> -- sorted list of loaded extension names
 function extensions:getLoadedExtensionsNames(excludeVirtual) end
 
 --- getSerializationData
---- @description Gets serialization data for all extensions
---- @example local data = extensions.getSerializationData('reload')
+-- Gets serialization data for all extensions
+-- example:  local data = extensions.getSerializationData('reload')
 --- @occurrences 1
 ---@param reason string|nil -- e.g. 'reload'
 ---@return table -- Serialized extension data
 function extensions:getSerializationData(reason) end
 
 --- hook
---- @description Calls a function on all loaded extensions that implement it
---- @example extensions.hook("onVehicleLoaded", retainDebug)
+-- Calls a function on all loaded extensions that implement it
+-- example:  extensions.hook("onVehicleLoaded", retainDebug)
 --- @occurrences 578
 ---@param funcName string -- Function name to call
 ---@param ... any -- Arguments to pass to the function
@@ -60,8 +60,8 @@ function extensions:getSerializationData(reason) end
 function extensions:hook(funcName, ...) end
 
 --- hookNotify
---- @description Calls a function on extensions without waiting for completion
---- @example extensions.hookNotify("onSettingsChanged")
+-- Calls a function on extensions without waiting for completion
+-- example:  extensions.hookNotify("onSettingsChanged")
 --- @occurrences 3
 ---@param funcName string -- Function name to call
 ---@param ... any -- Arguments to pass
@@ -69,24 +69,24 @@ function extensions:hook(funcName, ...) end
 function extensions:hookNotify(funcName, ...) end
 
 --- hookUpdate
---- @description Calls an update function on extensions (optimized for frequent calls)
---- @example extensions.hookUpdate("updateGFX")
+-- Calls an update function on extensions (optimized for frequent calls)
+-- example:  extensions.hookUpdate("updateGFX")
 --- @occurrences 27
 ---@param funcName string -- Update function name
 ---@return nil
 function extensions:hookUpdate(funcName) end
 
 --- isExtensionLoaded
---- @description Checks if an extension is currently loaded
---- @example if extensions.isExtensionLoaded('freeroam') then
+-- Checks if an extension is currently loaded
+-- example:  if extensions.isExtensionLoaded('freeroam') then
 --- @occurrences 41
 ---@param extName string -- Extension name
 ---@return boolean -- True if extension is loaded
 function extensions:isExtensionLoaded(extName) end
 
 --- load
---- @description Loads an extension module
---- @example extensions.load('tech/techCore')
+-- Loads an extension module
+-- example:  extensions.load('tech/techCore')
 --- @source lua\ge\extensions\core\modmanager.lua:596
 --- @occurrences 99
 ---@param module string -- Module path/name to load
@@ -94,8 +94,8 @@ function extensions:isExtensionLoaded(extName) end
 function extensions:load(module) end
 
 --- loadAtRoot
---- @description Loads an extension at a specific root namespace
---- @example local name, mod = extensions.loadAtRoot('path/to/ext', 'myRoot')
+-- Loads an extension at a specific root namespace
+-- example:  local name, mod = extensions.loadAtRoot('path/to/ext', 'myRoot')
 --- @occurrences 2
 ---@param extPath string -- Path to extension
 ---@param rootName string -- Root namespace name
@@ -104,8 +104,8 @@ function extensions:load(module) end
 function extensions:loadAtRoot(extPath, rootName) end
 
 --- loadModulesInDirectory
---- @description Loads all extension modules in a directory
---- @example extensions.loadModulesInDirectory('lua/ge/extensions/mymod')
+-- Loads all extension modules in a directory
+-- example:  extensions.loadModulesInDirectory('lua/ge/extensions/mymod')
 --- @occurrences 2
 ---@param directory string -- Directory containing modules
 ---@param excludeSubdirectories table|string[]|nil -- Subdirectories to skip
@@ -113,32 +113,32 @@ function extensions:loadAtRoot(extPath, rootName) end
 function extensions:loadModulesInDirectory(directory, excludeSubdirectories) end
 
 --- luaPathToExtName
---- @description Converts a Lua file path to extension name format
---- @example local extName = extensions.luaPathToExtName('lua/ge/extensions/mymod/init.lua')
+-- Converts a Lua file path to extension name format
+-- example:  local extName = extensions.luaPathToExtName('lua/ge/extensions/mymod/init.lua')
 --- @occurrences 3
 ---@param filepath string -- Lua file path
 ---@return string|nil -- Extension name or nil
 function extensions:luaPathToExtName(filepath) end
 
 --- refresh
---- @description Refreshes an extension by reloading it
---- @example extensions.refresh('freeroam')
+-- Refreshes an extension by reloading it
+-- example:  extensions.refresh('freeroam')
 --- @occurrences 5
 ---@param extName string -- Extension name to refresh
 ---@return nil
 function extensions:refresh(extName) end
 
 --- reload
---- @description Reloads an extension from disk
---- @example extensions.reload('core/vehicles')
+-- Reloads an extension from disk
+-- example:  extensions.reload('core/vehicles')
 --- @occurrences 1
 ---@param extPath string -- Extension path to reload
 ---@return nil
 function extensions:reload(extPath) end
 
 --- setCompletedCallback
---- @description Sets a callback to be called when a hook function completes
---- @example extensions.setCompletedCallback('onInit', myCallback)
+-- Sets a callback to be called when a hook function completes
+-- example:  extensions.setCompletedCallback('onInit', myCallback)
 --- @occurrences 1
 ---@param funcName string -- Hook function name
 ---@param callback function -- Callback function
@@ -146,24 +146,24 @@ function extensions:reload(extPath) end
 function extensions:setCompletedCallback(funcName, callback) end
 
 --- setProfiler
---- @description Sets the profiler for extension hook timing
---- @example extensions.setProfiler(myProfiler)
+-- Sets the profiler for extension hook timing
+-- example:  extensions.setProfiler(myProfiler)
 --- @occurrences 2
 ---@param profiler table|nil -- Profiler object or nil to disable
 ---@return nil
 function extensions:setProfiler(profiler) end
 
 --- unload
---- @description Unloads an extension or list of extensions
---- @example extensions.unload('freeroam')
+-- Unloads an extension or list of extensions
+-- example:  extensions.unload('freeroam')
 --- @occurrences 42
 ---@param extName string|table -- Extension name(s) to unload
 ---@return nil
 function extensions:unload(extName) end
 
 --- unloadExcept
---- @description Unloads all extensions except specified ones
---- @example extensions.unloadExcept('core', 'ui')
+-- Unloads all extensions except specified ones
+-- example:  extensions.unloadExcept('core', 'ui')
 --- @occurrences 2
 ---@param ... string|string[] -- Extension names to keep loaded
 ---@return nil

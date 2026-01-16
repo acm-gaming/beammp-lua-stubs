@@ -10,16 +10,16 @@
 TorqueScript = {}
 
 --- eval
---- @description Evaluates TorqueScript code and returns the result
---- @example TorqueScript.eval('return getSomeValue();')
+-- Evaluates TorqueScript code and returns the result
+-- example:  TorqueScript.eval('return getSomeValue();')
 --- @occurrences 13
 ---@param code string -- TorqueScript code to evaluate
 ---@return any -- Result of the evaluation
 function TorqueScript:eval(code) end
 
 --- exec
---- @description Executes a TorqueScript file
---- @example TorqueScript.exec(filePath)
+-- Executes a TorqueScript file
+-- example:  TorqueScript.exec(filePath)
 --- @occurrences 2
 ---@param filePath string -- Path to the TorqueScript file
 ---@return any -- Result of execution

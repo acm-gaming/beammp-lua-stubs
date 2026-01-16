@@ -32,4 +32,6 @@ function quat(
 
 
 Creates a new quaternion for rotation
+Creates a new quaternion with x, y, z, w components
+example:  local rot = quat(0, 0, 0, 1)
 

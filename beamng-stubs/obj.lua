@@ -188,15 +188,15 @@ function obj:attachLocalCoupler(nodeId, otherNodeId, strength, radius, lockRadiu
 function obj:autoplace(enabled) end
 
 --- C++ binding (found 7 usage(s))
---- @description Checks if a beam is broken
---- @example local beamBroken = obj:beamIsBroken(beam.cid)
+-- Checks if a beam is broken
+-- example:  local beamBroken = obj:beamIsBroken(beam.cid)
 ---@param beamID integer|string -- Beam ID
 ---@return boolean -- True if beam is broken
 function obj:beamIsBroken(beamID) end
 
 --- C++ binding (found 5 usage(s))
---- @description Breaks a beam by its ID
---- @example obj:breakBeam(bcid)
+-- Breaks a beam by its ID
+-- example:  obj:breakBeam(bcid)
 ---@param beamID integer|string -- Beam ID to break
 ---@return nil
 function obj:breakBeam(beamID) end
@@ -304,8 +304,8 @@ function obj:cutSFX(sourceId) end
 function obj:deflatePressureGroup(pressureGroup) end
 
 --- C++ binding (found 79 usage(s))
---- @description Deletes the object from the scene
---- @example obj:delete()
+-- Deletes the object from the scene
+-- example:  obj:delete()
 ---@return nil
 function obj:delete() end
 
@@ -357,8 +357,8 @@ function obj:findForestItems() end
 function obj:finishLoading() end
 
 --- C++ binding (found 1 usage(s))
---- @description Returns the value of a named field on the object
---- @example local dist = obj:get('shadowDistance')
+-- Returns the value of a named field on the object
+-- example:  local dist = obj:get('shadowDistance')
 ---@param fieldName string
 ---@return string|number|boolean|table|nil
 function obj:get(fieldName) end
@@ -372,39 +372,39 @@ function obj:get(fieldName) end
 function obj:get3nodeAngularVelocity(axis, node1, node2, node3) end
 
 --- C++ binding (found 23 usage(s))
---- @description Returns the absolute world position of a node
---- @example local pos = obj:getAbsNodePosition(nodeID)
+-- Returns the absolute world position of a node
+-- example:  local pos = obj:getAbsNodePosition(nodeID)
 ---@param nodeID integer|string -- Node ID
 ---@return vec3 -- Absolute node position
 function obj:getAbsNodePosition(nodeID) end
 
 --- C++ binding (found 3 usage(s))
---- @description Returns whether the object is active
---- @example if obj:getActive() then
+-- Returns whether the object is active
+-- example:  if obj:getActive() then
 ---@return boolean -- True if object is active
 function obj:getActive() end
 
 --- C++ binding (found 1 usage(s))
---- @description Returns the air density at the object's location
---- @example local density = obj:getAirDensity()
+-- Returns the air density at the object's location
+-- example:  local density = obj:getAirDensity()
 ---@return number -- Air density
 function obj:getAirDensity() end
 
 --- C++ binding (found 3 usage(s))
---- @description Returns the airflow speed at the object
---- @example local airflow = obj:getAirflowSpeed()
+-- Returns the airflow speed at the object
+-- example:  local airflow = obj:getAirflowSpeed()
 ---@return number -- Airflow speed
 function obj:getAirflowSpeed() end
 
 --- C++ binding (found 3 usage(s))
---- @description Returns the altitude of the object
---- @example local alt = obj:getAltitude()
+-- Returns the altitude of the object
+-- example:  local alt = obj:getAltitude()
 ---@return number -- Altitude
 function obj:getAltitude() end
 
 --- C++ binding (found 3 usage(s))
---- @description Returns the list of anchor names
---- @example local anchors = obj:getAnchorNames()
+-- Returns the list of anchor names
+-- example:  local anchors = obj:getAnchorNames()
 ---@return table -- Array of anchor names
 function obj:getAnchorNames() end
 
@@ -413,8 +413,8 @@ function obj:getAnchorNames() end
 function obj:getAngularVelocityBrakeCouple() end
 
 --- C++ binding (found 3 usage(s))
---- @description Returns the total number of beams in the object
---- @example local beamCount = obj:getBeamCount()
+-- Returns the total number of beams in the object
+-- example:  local beamCount = obj:getBeamCount()
 ---@return integer -- Number of beams
 function obj:getBeamCount() end
 
@@ -446,8 +446,8 @@ function obj:getBeamForce(beamID) end
 function obj:getBeamFrequencyAmplitude(beamID, frequency, sampleCount) end
 
 --- C++ binding (found 19 usage(s))
---- @description Returns the current length of a beam
---- @example local length = obj:getBeamLength(beamID)
+-- Returns the current length of a beam
+-- example:  local length = obj:getBeamLength(beamID)
 ---@param beamID integer|string -- Beam ID
 ---@return number -- Current beam length
 function obj:getBeamLength(beamID) end
@@ -498,8 +498,8 @@ function obj:getCameraPosition() end
 function obj:getCenterPosition() end
 
 --- C++ binding (found 152 usage(s))
---- @description Returns the class name of the object
---- @example local className = obj:getClassName()
+-- Returns the class name of the object
+-- example:  local className = obj:getClassName()
 ---@return string -- Class name
 function obj:getClassName() end
 
@@ -525,20 +525,20 @@ function obj:getData() end
 function obj:getDeclarationLine() end
 
 --- C++ binding (found 30 usage(s))
---- @description Returns the forward direction vector of the object
---- @example local dir = obj:getDirectionVector()
+-- Returns the forward direction vector of the object
+-- example:  local dir = obj:getDirectionVector()
 ---@return vec3 -- Forward direction vector
 function obj:getDirectionVector() end
 
 --- C++ binding (found 4 usage(s))
---- @description Returns the right direction vector of the object
---- @example local right = obj:getDirectionVectorRight()
+-- Returns the right direction vector of the object
+-- example:  local right = obj:getDirectionVectorRight()
 ---@return vec3 -- Right direction vector
 function obj:getDirectionVectorRight() end
 
 --- C++ binding (found 16 usage(s))
---- @description Returns the up direction vector of the object
---- @example local up = obj:getDirectionVectorUp()
+-- Returns the up direction vector of the object
+-- example:  local up = obj:getDirectionVectorUp()
 ---@return vec3 -- Up direction vector
 function obj:getDirectionVectorUp() end
 
@@ -547,8 +547,8 @@ function obj:getDirectionVectorUp() end
 function obj:getDirectionVectorUpXYZ() end
 
 --- C++ binding (found 2 usage(s))
---- @description Gets a dynamic data field value by name
---- @example local license = vehicle:getDynDataFieldbyName("licenseText", 0)
+-- Gets a dynamic data field value by name
+-- example:  local license = vehicle:getDynDataFieldbyName("licenseText", 0)
 ---@param fieldName string
 ---@param arrayIndex integer
 ---@return string|number|boolean|table|nil
@@ -575,8 +575,8 @@ function obj:getEnvPressure() end
 function obj:getEnvTemperature() end
 
 --- C++ binding (found 49 usage(s))
---- @description Gets a field value by name and index
---- @example local name = vehicle:getField('name', 0)
+-- Gets a field value by name and index
+-- example:  local name = vehicle:getField('name', 0)
 ---@param fieldName string
 ---@param index integer|string
 ---@return string|number|boolean|table|nil
@@ -647,14 +647,14 @@ function obj:getGroup() end
 function obj:getGroupPressure(pressureGroup) end
 
 --- C++ binding (found 27 usage(s))
---- @description Returns the object ID
---- @example aeroData.vehID = obj:getID()
+-- Returns the object ID
+-- example:  aeroData.vehID = obj:getID()
 ---@return integer -- Object ID
 function obj:getID() end
 
 --- C++ binding (found 51 usage(s))
---- @description Returns the ID of the object
---- @example local id = obj:getId()
+-- Returns the ID of the object
+-- example:  local id = obj:getId()
 ---@return integer -- Object ID
 function obj:getId() end
 
@@ -710,8 +710,8 @@ function obj:getMaterialNames() end
 function obj:getModelFile() end
 
 --- C++ binding (found 26 usage(s))
---- @description Returns the name of the object
---- @example local objName = obj:getName()
+-- Returns the name of the object
+-- example:  local objName = obj:getName()
 ---@return string -- Object name
 function obj:getName() end
 
@@ -721,8 +721,8 @@ function obj:getName() end
 function obj:getNodeCluster(nodeID) end
 
 --- C++ binding (found 6 usage(s))
---- @description Returns the total number of nodes in the object
---- @example local count = obj:getNodeCount()
+-- Returns the total number of nodes in the object
+-- example:  local count = obj:getNodeCount()
 ---@return integer -- Number of nodes
 function obj:getNodeCount() end
 
@@ -750,15 +750,15 @@ function obj:getNodeForceVector(nodeID) end
 function obj:getNodeForceVectorXYZ(nodeID) end
 
 --- C++ binding (found 16 usage(s))
---- @description Returns the mass of a node
---- @example local mass = obj:getNodeMass(nodeID)
+-- Returns the mass of a node
+-- example:  local mass = obj:getNodeMass(nodeID)
 ---@param nodeID integer|string -- Node ID
 ---@return number -- Node mass
 function obj:getNodeMass(nodeID) end
 
 --- C++ binding (found 42 usage(s))
---- @description Returns the position of a node relative to the object
---- @example local pos = obj:getNodePosition(nodeID)
+-- Returns the position of a node relative to the object
+-- example:  local pos = obj:getNodePosition(nodeID)
 ---@param nodeID integer|string -- Node ID
 ---@return vec3 -- Node position
 function obj:getNodePosition(nodeID) end
@@ -874,14 +874,14 @@ function obj:getPhysicsDt() end
 function obj:getPitchAngularVelocity() end
 
 --- C++ binding (found 99 usage(s))
---- @description Returns the world position of the object
---- @example local pos = obj:getPosition()
+-- Returns the world position of the object
+-- example:  local pos = obj:getPosition()
 ---@return vec3 -- World position
 function obj:getPosition() end
 
 --- C++ binding (found 7 usage(s))
---- @description Returns the world position as separate X, Y, Z values
---- @example local x, y, z = obj:getPositionXYZ()
+-- Returns the world position as separate X, Y, Z values
+-- example:  local x, y, z = obj:getPositionXYZ()
 ---@return number x -- X position
 ---@return number y -- Y position
 ---@return number z -- Z position
@@ -913,8 +913,8 @@ function obj:getRollPitchYawAngularVelocity() end
 function obj:getRollPitchYawRad() end
 
 --- C++ binding (found 15 usage(s))
---- @description Returns the rotation quaternion of the object
---- @example local rot = obj:getRotation()
+-- Returns the rotation quaternion of the object
+-- example:  local rot = obj:getRotation()
 ---@return quat -- Rotation quaternion
 function obj:getRotation() end
 
@@ -964,8 +964,8 @@ function obj:getSurfaceHeightBelow(position) end
 function obj:getTorsionbarDeformation(torsionbarId) end
 
 --- C++ binding (found 10 usage(s))
---- @description Returns the transform matrix of the object
---- @example local transform = obj:getTransform()
+-- Returns the transform matrix of the object
+-- example:  local transform = obj:getTransform()
 ---@return table -- Transform matrix
 function obj:getTransform() end
 
@@ -982,8 +982,8 @@ function obj:getUid() end
 function obj:getUpdateUIflag() end
 
 --- C++ binding (found 36 usage(s))
---- @description Returns the velocity vector of the object
---- @example local vel = obj:getVelocity()
+-- Returns the velocity vector of the object
+-- example:  local vel = obj:getVelocity()
 ---@return vec3 -- Velocity vector
 function obj:getVelocity() end
 
@@ -1043,7 +1043,7 @@ function obj:inWater(nodeId) end
 function obj:incRefCount() end
 
 --- C++ binding (found 1 usage(s))
---- @description Refreshes inspector data; return true to force UI refresh
+-- Refreshes inspector data; return true to force UI refresh
 ---@return boolean|nil
 function obj:inspectUpdate() end
 
@@ -1175,13 +1175,13 @@ function obj:playSFXOnceStaticCT(eventName, nodeId, volume, pitch, color, textur
 function obj:postApply() end
 
 --- C++ binding (found 5 usage(s))
---- @description Prepares the object for field edits in the editor
+-- Prepares the object for field edits in the editor
 ---@return nil
 function obj:preApply() end
 
 --- C++ binding (found 1 usage(s))
---- @description Updates a prop's transform and animation value
---- @example obj:propUpdate(prop.pid, pt.x, pt.y, pt.z, pr.x, pr.y, pr.z, true, val, constrainedVal)
+-- Updates a prop's transform and animation value
+-- example:  obj:propUpdate(prop.pid, pt.x, pt.y, pt.z, pr.x, pr.y, pr.z, true, val, constrainedVal)
 ---@param propId integer
 ---@param posX number
 ---@param posY number
@@ -1196,8 +1196,8 @@ function obj:preApply() end
 function obj:propUpdate(propId, posX, posY, posZ, rotX, rotY, rotZ, visible, inputValue, appliedValue) end
 
 --- C++ binding (found 114 usage(s))
---- @description Queues Lua code to execute in the game engine's Lua VM
---- @example obj:queueGameEngineLua("guihooks.trigger('Message', 'Hello')")
+-- Queues Lua code to execute in the game engine's Lua VM
+-- example:  obj:queueGameEngineLua("guihooks.trigger('Message', 'Hello')")
 ---@param luaCode string -- Lua code to execute
 ---@return nil
 function obj:queueGameEngineLua(luaCode) end
@@ -1208,8 +1208,8 @@ function obj:queueGameEngineLua(luaCode) end
 function obj:queueHookJS(hookID) end
 
 --- C++ binding (found 39 usage(s))
---- @description Queues Lua code to execute in this object's Lua VM
---- @example obj:queueLuaCommand("electrics.toggle_ignition()")
+-- Queues Lua code to execute in this object's Lua VM
+-- example:  obj:queueLuaCommand("electrics.toggle_ignition()")
 ---@param luaCode string -- Lua code to execute
 ---@return nil
 function obj:queueLuaCommand(luaCode) end
@@ -1269,8 +1269,8 @@ function obj:resetBrokenFlexMesh() end
 function obj:resetMaterials(materialIndex) end
 
 --- C++ binding (found 1 usage(s))
---- @description Actuates a screw-type beam and returns its linear velocity
---- @example local v = obj:screwBeam(cid, force, speedLimit, math.huge, math.cos(leadAngle), 1, 1, frictionForce, 0, 0, minExtend, maxExtend)
+-- Actuates a screw-type beam and returns its linear velocity
+-- example:  local v = obj:screwBeam(cid, force, speedLimit, math.huge, math.cos(leadAngle), 1, 1, frictionForce, 0, 0, minExtend, maxExtend)
 ---@param outId integer
 ---@param torqueForce number
 ---@param speedLimit number
@@ -1287,8 +1287,8 @@ function obj:resetMaterials(materialIndex) end
 function obj:screwBeam(outId, torqueForce, speedLimit, slipForce, helixAngleCos, face1Cos, face2Cos, frictionForceStick, frictionCoef, slipSpeedLimit, minExtend, maxExtend) end
 
 --- C++ binding (found 1 usage(s))
---- @description Sends RPM LED information to a force-feedback device
---- @example obj:sendRPMLeds(FFBID, currentRPM, rpmFirstLedTurnsOn, rpmRedLine)
+-- Sends RPM LED information to a force-feedback device
+-- example:  obj:sendRPMLeds(FFBID, currentRPM, rpmFirstLedTurnsOn, rpmRedLine)
 ---@param deviceId integer
 ---@param currentRPM number
 ---@param rpmFirstLedTurnsOn number
@@ -1470,8 +1470,8 @@ function obj:setEmitterDataBlock(dataBlock) end
 function obj:setEngineAxisCoupleNodes(node1, node2, node3) end
 
 --- C++ binding (found 3 usage(s))
---- @description Updates an engine sound source with current RPM and load data
---- @example obj:setEngineSound(device.engineSoundID, rpm, scaledLoad, fundamentalFreq, volumeCoef)
+-- Updates an engine sound source with current RPM and load data
+-- example:  obj:setEngineSound(device.engineSoundID, rpm, scaledLoad, fundamentalFreq, volumeCoef)
 ---@param soundId integer
 ---@param rpm number
 ---@param engineLoad number
@@ -1481,8 +1481,8 @@ function obj:setEngineAxisCoupleNodes(node1, node2, node3) end
 function obj:setEngineSound(soundId, rpm, engineLoad, fundamentalFreq, volumeCoef) end
 
 --- C++ binding (found 149 usage(s))
---- @description Sets a field value on the object
---- @example obj:setField('shapeName', 0, '/levels/smallgrid/art/shapes/misc/gm_cube_1m.dae')
+-- Sets a field value on the object
+-- example:  obj:setField('shapeName', 0, '/levels/smallgrid/art/shapes/misc/gm_cube_1m.dae')
 ---@param fieldName string
 ---@param index integer|string
 ---@param value string|number
@@ -1522,8 +1522,8 @@ function obj:setInternalName(name) end
 function obj:setMaterial(materialIndex) end
 
 --- C++ binding (found 1 usage(s))
---- @description Scales the emissive factor for a material slot
---- @example obj:setMaterialEmissiveFactor(va.msc, color(255,255,255))
+-- Scales the emissive factor for a material slot
+-- example:  obj:setMaterialEmissiveFactor(va.msc, color(255,255,255))
 ---@param materialSlot integer
 ---@param emissive Color
 ---@return nil
@@ -1635,8 +1635,8 @@ function obj:setPlanets(planets) end
 function obj:setPosRot(x, y, z, rx, ry, rz, rw) end
 
 --- C++ binding (found 16 usage(s))
---- @description Sets the world position of the object
---- @example obj:setPosition(vec3(-2, 1, 1))
+-- Sets the world position of the object
+-- example:  obj:setPosition(vec3(-2, 1, 1))
 ---@param position vec3|number
 ---@param y number|nil
 ---@param z number|nil
@@ -1653,6 +1653,20 @@ function obj:setPosition(position, y, z) end
 ---@param rw number
 ---@return nil
 function obj:setPositionRotation(x, y, z, rx, ry, rz, rw) end
+
+--- Sets the linear velocity of the vehicle
+---@param x number Velocity X
+---@param y number Velocity Y
+---@param z number Velocity Z
+---@return nil
+function obj:setVelocity(x, y, z) end
+
+--- Sets the angular velocity of the vehicle
+---@param x number Angular velocity X
+---@param y number Angular velocity Y
+---@param z number Angular velocity Z
+---@return nil
+function obj:setAngularVelocity(x, y, z) end
 
 --- C++ binding (found 1 usage(s))
 ---@param beamId integer
@@ -1676,15 +1690,15 @@ function obj:setPropLight(propId, brightness, flareScale, color) end
 function obj:setSFXparameter(sourceId, keyName, value) end
 
 --- C++ binding (found 9 usage(s))
---- @description Sets the uniform scale of the object
---- @example object:setScale(vec3(2, 2, 2))
+-- Sets the uniform scale of the object
+-- example:  object:setScale(vec3(2, 2, 2))
 ---@param scale vec3
 ---@return nil
 function obj:setScale(scale) end
 
 --- C++ binding (found 1 usage(s))
---- @description Sets per-axis scale components
---- @example obj:setScaleXYZ(scl.x, scl.y, scl.z)
+-- Sets per-axis scale components
+-- example:  obj:setScaleXYZ(scl.x, scl.y, scl.z)
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1731,15 +1745,15 @@ function obj:setTorsionbarPrecompressionAngle(torsionbarId, angle, ratio) end
 function obj:setTorsionbarSpringDamp(torsionbarId, spring, damp) end
 
 --- C++ binding (found 11 usage(s))
---- @description Sets the transform matrix of the object
---- @example obj:setTransform(transform)
+-- Sets the transform matrix of the object
+-- example:  obj:setTransform(transform)
 ---@param transform table -- Transform matrix
 ---@return nil
 function obj:setTransform(transform) end
 
 --- C++ binding (found 25 usage(s))
---- @description Sets the volume of a sound source
---- @example obj:setVolume(sound, volume)
+-- Sets the volume of a sound source
+-- example:  obj:setVolume(sound, volume)
 ---@param sourceId integer -- Sound source ID
 ---@param volume number -- Volume level (0-1)
 ---@return nil

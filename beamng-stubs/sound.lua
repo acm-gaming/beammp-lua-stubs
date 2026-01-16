@@ -10,16 +10,16 @@
 sound = {}
 
 --- play
---- @description Plays the sound (use -1 to play immediately)
---- @example sound:play(-1)
+-- Plays the sound (use -1 to play immediately)
+-- example:  sound:play(-1)
 --- @occurrences 5
 ---@param index integer -- Play index (-1 for immediate)
 ---@return nil
 function sound:play(index) end
 
 --- setParameter
---- @description Sets a parameter value on the sound
---- @example sound:setParameter("pitch", 0.5)
+-- Sets a parameter value on the sound
+-- example:  sound:setParameter("pitch", 0.5)
 --- @occurrences 5
 ---@param paramName string -- Parameter name (e.g., "pitch", "volume")
 ---@param value number -- Parameter value
@@ -27,24 +27,24 @@ function sound:play(index) end
 function sound:setParameter(paramName, value) end
 
 --- setTransform
---- @description Sets the 3D transform/position of the sound source
---- @example sound:setTransform(getCameraTransform())
+-- Sets the 3D transform/position of the sound source
+-- example:  sound:setTransform(getCameraTransform())
 --- @occurrences 7
 ---@param transform table -- Transform matrix for sound position
 ---@return nil
 function sound:setTransform(transform) end
 
 --- setVolume
---- @description Sets the volume of the sound
---- @example sound:setVolume(1)
+-- Sets the volume of the sound
+-- example:  sound:setVolume(1)
 --- @occurrences 2
 ---@param volume number -- Volume level (0-1)
 ---@return nil
 function sound:setVolume(volume) end
 
 --- stop
---- @description Stops the sound
---- @example sound:stop(-1)
+-- Stops the sound
+-- example:  sound:stop(-1)
 --- @occurrences 5
 ---@param index integer -- Stop index (-1 for immediate)
 ---@return nil

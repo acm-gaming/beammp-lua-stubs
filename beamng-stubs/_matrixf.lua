@@ -1,24 +1,22 @@
 -- BeamNG.drive Lua API Stubs
--- Matrix type for transformations
+-- Matrix type for 4x4 transformations
 
 ---@meta
 
 ---@class MatrixF
-local MatrixF = {}
-
---- Creates a new transformation matrix
----@param ... any Optional initialization values
----@return MatrixF mat The new matrix
-function MatrixF(...) end
+---@overload fun(): MatrixF
+---@overload fun(identity: boolean): MatrixF
+---@overload fun(value: number): MatrixF
+MatrixF = {}
 
 --- Gets a column from the matrix
----@param col integer Column index (0-3), column 3 is position
+---@param col integer Column index (0=right, 1=forward, 2=up, 3=position)
 ---@return vec3 vec Column vector
 function MatrixF:getColumn(col) end
 
 --- Sets a column of the matrix
----@param col integer Column index (0-3)
----@param vec vec3 Vector to set
+---@param col integer Column index (0=right, 1=forward, 2=up, 3=position)
+---@param vec vec3|Point3F Vector to set
 function MatrixF:setColumn(col, vec) end
 
 --- Multiplies this matrix by another
@@ -34,4 +32,10 @@ function MatrixF:inverse() end
 ---@return vec3 position Position vector
 function MatrixF:getPosition() end
 
-return MatrixF
+--- Converts matrix to Euler angles
+---@return Point3F angles Euler angles
+function MatrixF:toEuler() end
+
+--- Sets matrix from Euler angles
+---@param angles Point3F|vec3 Euler angles
+function MatrixF:setFromEuler(angles) end

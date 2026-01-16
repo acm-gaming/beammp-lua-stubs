@@ -15,7 +15,11 @@
 ### SceneObject.getPosition
 ---
 ```lua
-function SceneObject.getPosition() -> position Point3F
+function SceneObject.getPosition() -> position Point3F {
+    x = number,
+    y = number,
+    z = number,
+}
 ```
 
 @return `position` - The world position
@@ -99,7 +103,11 @@ Sets the rotation of this object
 ### SceneObject.getScale
 ---
 ```lua
-function SceneObject.getScale() -> scale Point3F
+function SceneObject.getScale() -> scale Point3F {
+    x = number,
+    y = number,
+    z = number,
+}
 ```
 
 @return `scale` - The scale vector
@@ -141,7 +149,15 @@ Sets the scale of this object
 ### SceneObject.getTransform
 ---
 ```lua
-function SceneObject.getTransform() -> transform MatrixF
+function SceneObject.getTransform() -> transform MatrixF {
+    getColumn = function,
+    setColumn = function,
+    mul = function,
+    inverse = function,
+    getPosition = function,
+    toEuler = function,
+    setFromEuler = function,
+}
 ```
 
 @return `transform` - The transformation matrix
@@ -162,7 +178,15 @@ Gets the full transformation matrix
 ### SceneObject.setTransform
 ---
 ```lua
-function SceneObject.setTransform(transform: MatrixF)
+function SceneObject.setTransform(transform: MatrixF {
+    getColumn = function,
+    setColumn = function,
+    mul = function,
+    inverse = function,
+    getPosition = function,
+    toEuler = function,
+    setFromEuler = function,
+})
 ```
 @param `transform` - The new transformation matrix
 
@@ -222,6 +246,105 @@ Gets the object-space bounding box
 
 
 
+### SceneObject.setPositionRotation
+---
+```lua
+function SceneObject.setPositionRotation(
+  x: number,
+  y: number,
+  z: number,
+  rx: number,
+  ry: number,
+  rz: number,
+  rw: number
+)
+```
+@param `x` - Position X
+
+@param `y` - Position Y
+
+@param `z` - Position Z
+
+@param `rx` - Rotation quaternion X
+
+@param `ry` - Rotation quaternion Y
+
+@param `rz` - Rotation quaternion Z
+
+@param `rw` - Rotation quaternion W
+
+
+
+
+
+
+Sets position and rotation in one call
+
+
+
+
+
+
+
+
+### SceneObject.setVelocity
+---
+```lua
+function SceneObject.setVelocity(
+  x: number,
+  y: number,
+  z: number
+)
+```
+@param `x` - Velocity X
+
+@param `y` - Velocity Y
+
+@param `z` - Velocity Z
+
+
+
+
+
+
+Sets the linear velocity of the object
+
+
+
+
+
+
+
+
+### SceneObject.setAngularVelocity
+---
+```lua
+function SceneObject.setAngularVelocity(
+  x: number,
+  y: number,
+  z: number
+)
+```
+@param `x` - Angular velocity X
+
+@param `y` - Angular velocity Y
+
+@param `z` - Angular velocity Z
+
+
+
+
+
+
+Sets the angular velocity of the object
+
+
+
+
+
+
+
+
 
 
 
@@ -231,12 +354,18 @@ Gets the object-space bounding box
 ### SceneObject.position
 ---
 ```lua
-SceneObject.position : MatrixF
+SceneObject.position : MatrixF {
+    getColumn: function,
+    setColumn: function,
+    mul: function,
+    inverse: function,
+    getPosition: function,
+    toEuler: function,
+    setFromEuler: function,
+}
 ```
 
 
-
-Transform matrix (use :getColumn(3) for world position)
 
 
 
@@ -253,8 +382,6 @@ SceneObject.rotation : QuatF
 
 
 
-Rotation quaternion
-
 
 
 
@@ -265,12 +392,14 @@ Rotation quaternion
 ### SceneObject.scale
 ---
 ```lua
-SceneObject.scale : Point3F
+SceneObject.scale : Point3F {
+    x: number,
+    y: number,
+    z: number,
+}
 ```
 
 
-
-Scale vector
 
 
 
@@ -282,12 +411,18 @@ Scale vector
 ### SceneObject.transform
 ---
 ```lua
-SceneObject.transform : MatrixF
+SceneObject.transform : MatrixF {
+    getColumn: function,
+    setColumn: function,
+    mul: function,
+    inverse: function,
+    getPosition: function,
+    toEuler: function,
+    setFromEuler: function,
+}
 ```
 
 
-
-Full transformation matrix (alias for position)
 
 
 
@@ -303,8 +438,6 @@ SceneObject.instanceColor : ColorF
 ```
 
 
-
-Instance color for material tinting
 
 
 

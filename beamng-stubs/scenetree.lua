@@ -16,7 +16,7 @@ function scenetree.decalRoadContainsPoint(objectId, point) end
 
 --- Finds all objects of a specific class name
 ---@param className string Class name to search for (e.g. 'BeamNGTrigger', 'BeamNGVehicle')
----@return table<string> names Array of object names matching the class
+---@return string[] names Array of object names matching the class (empty if none found)
 function scenetree.findClassObjects(className) end
 
 --- Finds an object by its name
@@ -31,11 +31,11 @@ function scenetree.findObjectById(objectId) end
 
 --- Finds all objects that are subclasses of a specific class
 ---@param className string Class name to search for subclasses of
----@return table|nil objects Array of matching objects or nil
+---@return string[]|nil names Array of object names matching the class
 function scenetree.findSubClassObjects(className) end
 
 --- Gets all objects in the scene tree
----@return table|nil objects Array of all scene objects or nil
+---@return string[]|nil names Array of all scene object names
 function scenetree.getAllObjects() end
 
 --- Checks if an object exists by name

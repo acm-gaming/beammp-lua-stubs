@@ -26,6 +26,8 @@ function map.assureLoad() ->  nil
 
 
 assureLoad
+Ensures the map data is loaded, reloading if necessary
+example:  map.assureLoad()
 
 
 
@@ -33,8 +35,6 @@ assureLoad
 
 
 
-@description Ensures the map data is loaded, reloading if necessary
-@example map.assureLoad()
 @occurrences 5
 
 
@@ -70,6 +70,8 @@ function map.findClosestRoad(
 
 
 findClosestRoad
+Finds the road edge closest to a position
+example:  local n1Id, n2Id, dist = map.findClosestRoad(pos)
 
 
 
@@ -77,8 +79,6 @@ findClosestRoad
 
 
 
-@description Finds the road edge closest to a position
-@example local n1Id, n2Id, dist = map.findClosestRoad(pos)
 @occurrences 32
 
 
@@ -95,6 +95,8 @@ function map.getGraphpath() ->  table
 
 
 getGraphpath
+Gets the navigation graph path object
+example:  local graphPath = map.getGraphpath()
 
 
 
@@ -102,8 +104,6 @@ getGraphpath
 
 
 
-@description Gets the navigation graph path object
-@example local graphPath = map.getGraphpath()
 @occurrences 17
 
 
@@ -120,6 +120,8 @@ function map.getManualWaypoints() ->  table
 
 
 getManualWaypoints
+Gets manually placed waypoints
+example:  for name, n in pairs(map.getManualWaypoints()) do
 
 
 
@@ -127,8 +129,6 @@ getManualWaypoints
 
 
 
-@description Gets manually placed waypoints
-@example for name, n in pairs(map.getManualWaypoints()) do
 @occurrences 3
 
 
@@ -145,6 +145,8 @@ function map.getMap() ->  table
 
 
 getMap
+Gets the map data with nodes and edges
+example:  local mapData = map.getMap()
 
 
 
@@ -152,8 +154,6 @@ getMap
 
 
 
-@description Gets the map data with nodes and edges
-@example local mapData = map.getMap()
 @occurrences 87
 
 
@@ -172,6 +172,7 @@ function map.getNodeLinkCount(nodeId: string) ->  integer
 
 
 getNodeLinkCount
+Gets the number of links for a navigation graph node
 
 
 
@@ -179,7 +180,6 @@ getNodeLinkCount
 
 
 
-@description Gets the number of links for a navigation graph node
 @occurrences 6
 
 
@@ -211,6 +211,7 @@ function map.getNodesFromPathDist(
 
 
 getNodesFromPathDist
+Finds nodes and xnorm based on distance along path
 
 
 
@@ -218,7 +219,6 @@ getNodesFromPathDist
 
 
 
-@description Finds nodes and xnorm based on distance along path
 @occurrences 1
 
 
@@ -254,6 +254,8 @@ function map.getPath(
 
 
 getPath
+Gets a path between two nodes with optional filtering
+example:  local path = map.getPath(name_a, name_b)
 
 
 
@@ -261,8 +263,6 @@ getPath
 
 
 
-@description Gets a path between two nodes with optional filtering
-@example local path = map.getPath(name_a, name_b)
 @occurrences 11
 
 
@@ -312,6 +312,8 @@ function map.getPointToPointPath(
 
 
 getPointToPointPath
+Gets a path between two world positions
+example:  local path = map.getPointToPointPath(from.pos, to.pos)
 
 
 
@@ -319,8 +321,6 @@ getPointToPointPath
 
 
 
-@description Gets a path between two world positions
-@example local path = map.getPointToPointPath(from.pos, to.pos)
 @occurrences 2
 
 
@@ -337,6 +337,8 @@ function map.getRoadRules() ->  table
 
 
 getRoadRules
+Gets the road rules for the current map
+example:  local legalSide = map.getRoadRules().rightHandDrive and -1 or 1
 
 
 
@@ -344,8 +346,6 @@ getRoadRules
 
 
 
-@description Gets the road rules for the current map
-@example local legalSide = map.getRoadRules().rightHandDrive and -1 or 1
 @occurrences 7
 
 
@@ -418,6 +418,7 @@ function map.isCrashAvoidable(
 
 
 isCrashAvoidable
+Checks if a position is safe to spawn given an object in motion
 
 
 
@@ -425,7 +426,6 @@ isCrashAvoidable
 
 
 
-@description Checks if a position is safe to spawn given an object in motion
 @occurrences 1
 
 
@@ -440,6 +440,7 @@ function map.load() ->  nil
 
 
 load
+Loads the map data
 
 
 
@@ -447,7 +448,6 @@ load
 
 
 
-@description Loads the map data
 @occurrences 1
 
 
@@ -478,6 +478,7 @@ function map.objectData(
 
 
 objectData
+Receives vehicle data from vehicles for tracking
 
 
 
@@ -485,7 +486,6 @@ objectData
 
 
 
-@description Receives vehicle data from vehicles for tracking
 @occurrences 1
 
 
@@ -502,6 +502,7 @@ function map.onFilesChanged(files: table) ->  nil
 
 
 onFilesChanged
+Callback when files change, reloads map if navgraph files changed
 
 
 
@@ -509,7 +510,6 @@ onFilesChanged
 
 
 
-@description Callback when files change, reloads map if navgraph files changed
 @occurrences 1
 
 
@@ -526,6 +526,7 @@ function map.onWaypoint(args: table) ->  nil
 
 
 onWaypoint
+Callback when a waypoint event occurs
 
 
 
@@ -533,7 +534,6 @@ onWaypoint
 
 
 
-@description Callback when a waypoint event occurs
 @occurrences 1
 
 
@@ -557,6 +557,7 @@ function map.optimizePath(
 
 
 optimizePath
+Optimizes a path for smoother navigation
 
 
 
@@ -564,7 +565,6 @@ optimizePath
 
 
 
-@description Optimizes a path for smoother navigation
 @occurrences 1
 
 
@@ -586,6 +586,7 @@ function map.request(
 
 
 request
+Requests map data for an object
 
 
 
@@ -593,7 +594,6 @@ request
 
 
 
-@description Requests map data for an object
 @occurrences 1
 
 
@@ -610,6 +610,7 @@ function map.reset(customMapNodes: table?) ->  nil
 
 
 reset
+Resets and reloads the map data
 
 
 
@@ -617,7 +618,6 @@ reset
 
 
 
-@description Resets and reloads the map data
 @occurrences 14
 
 
@@ -672,6 +672,7 @@ function map.safeTeleport(
 
 
 safeTeleport
+Wrapper function for spawn.safeTeleport()
 
 
 
@@ -679,7 +680,6 @@ safeTeleport
 
 
 
-@description Wrapper function for spawn.safeTeleport()
 @occurrences 1
 
 
@@ -719,6 +719,8 @@ function map.setEnabled(enabled: boolean) ->  boolean
 
 
 setEnabled
+Enables or disables the map navigation system
+example:  map:setEnabled(true)
 
 
 
@@ -726,8 +728,6 @@ setEnabled
 
 
 
-@description Enables or disables the map navigation system
-@example map:setEnabled(true)
 @occurrences 5
 
 
@@ -744,6 +744,8 @@ function map.setTrafficExclusionZones(zones: table) ->  nil
 
 
 setTrafficExclusionZones
+Sets traffic exclusion zones for navigation
+example:  map.setTrafficExclusionZones(zones)
 
 
 
@@ -751,8 +753,6 @@ setTrafficExclusionZones
 
 
 
-@description Sets traffic exclusion zones for navigation
-@example map.setTrafficExclusionZones(zones)
 @occurrences 1
 
 
@@ -778,6 +778,7 @@ function map.surfaceNormal(
 
 
 surfaceNormal
+Approximates a terrain surface normal around a point
 
 
 
@@ -785,7 +786,6 @@ surfaceNormal
 
 
 
-@description Approximates a terrain surface normal around a point
 @occurrences 10
 
 

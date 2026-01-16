@@ -44,6 +44,8 @@ function UI.buttonImg(
 
 
 buttonImg
+Creates an image button in the editor UI
+example:  UI.buttonImg('joints_up', 'link', {30,20}, color)
 
 
 
@@ -51,8 +53,6 @@ buttonImg
 
 
 
-@description Creates an image button in the editor UI
-@example UI.buttonImg('joints_up', 'link', {30,20}, color)
 @occurrences 7
 
 
@@ -82,6 +82,8 @@ function UI.buttonTxt(
 
 
 buttonTxt
+Creates a text button in the editor UI
+example:  UI.buttonTxt('save', 'Save File', 100, 30)
 
 
 
@@ -89,8 +91,6 @@ buttonTxt
 
 
 
-@description Creates a text button in the editor UI
-@example UI.buttonTxt('save', 'Save File', 100, 30)
 @occurrences 5
 
 
@@ -117,6 +117,8 @@ function UI.check(
 
 
 check
+Creates a checkbox in the editor UI
+example:  UI.check('', 'jpart_pick', v.sel)
 
 
 
@@ -124,8 +126,6 @@ check
 
 
 
-@description Creates a checkbox in the editor UI
-@example UI.check('', 'jpart_pick', v.sel)
 @occurrences 5
 
 
@@ -147,6 +147,8 @@ function UI.columnRight(
 
 
 columnRight
+Aligns content to the right side of a column
+example:  UI.columnRight(100, true)
 
 
 
@@ -154,8 +156,6 @@ columnRight
 
 
 
-@description Aligns content to the right side of a column
-@example UI.columnRight(100, true)
 @occurrences 1
 
 
@@ -185,6 +185,8 @@ function UI.combo(
 
 
 combo
+Creates a combo dropdown in the editor UI
+example:  UI.combo('Select', 'combo_id', items, currentIndex)
 
 
 
@@ -192,8 +194,6 @@ combo
 
 
 
-@description Creates a combo dropdown in the editor UI
-@example UI.combo('Select', 'combo_id', items, currentIndex)
 @occurrences 1
 
 
@@ -223,6 +223,8 @@ function UI.control(
 
 
 control
+Creates a generic control element
+example:  UI.control(type, id, value, config)
 
 
 
@@ -230,8 +232,6 @@ control
 
 
 
-@description Creates a generic control element
-@example UI.control(type, id, value, config)
 @occurrences 1
 
 
@@ -248,6 +248,8 @@ function UI.hint(text: (string|any)) ->  nil
 
 
 hint
+Displays a hint/tooltip in the UI
+example:  UI.hint('Click to save')
 
 
 
@@ -255,8 +257,6 @@ hint
 
 
 
-@description Displays a hint/tooltip in the UI
-@example UI.hint('Click to save')
 @occurrences 4
 
 
@@ -278,6 +278,8 @@ function UI.inject(
 
 
 inject
+Injects UI elements into a container
+example:  UI.inject(container, elements)
 
 
 
@@ -285,8 +287,6 @@ inject
 
 
 
-@description Injects UI elements into a container
-@example UI.inject(container, elements)
 @occurrences 2
 
 
@@ -316,6 +316,8 @@ function UI.slider(
 
 
 slider
+Creates a slider control in the editor UI
+example:  UI.slider('Rotate', 'piece_rot', {-180,180})
 
 
 
@@ -323,8 +325,6 @@ slider
 
 
 
-@description Creates a slider control in the editor UI
-@example UI.slider('Rotate', 'piece_rot', {-180,180})
 @occurrences 2
 
 
@@ -354,6 +354,8 @@ function UI.sliderC(
 
 
 sliderC
+Creates a centered slider control in the editor UI
+example:  UI.sliderC('Scale', 'scale_slider', {0,100})
 
 
 
@@ -361,8 +363,6 @@ sliderC
 
 
 
-@description Creates a centered slider control in the editor UI
-@example UI.sliderC('Scale', 'scale_slider', {0,100})
 @occurrences 2
 
 
@@ -390,6 +390,8 @@ function UI.table(
 
 
 table
+Creates a table/grid in the editor UI
+example:  UI.table('data_table', columns, rows, config)
 
 
 
@@ -397,8 +399,6 @@ table
 
 
 
-@description Creates a table/grid in the editor UI
-@example UI.table('data_table', columns, rows, config)
 @occurrences 6
 
 
@@ -415,6 +415,8 @@ function UI.tree2ui(tree: any) ->  nil
 
 
 tree2ui
+Converts a tree structure to UI elements
+example:  UI.tree2ui(treeData)
 
 
 
@@ -422,8 +424,6 @@ tree2ui
 
 
 
-@description Converts a tree structure to UI elements
-@example UI.tree2ui(treeData)
 @occurrences 3
 
 

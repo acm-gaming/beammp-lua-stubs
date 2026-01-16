@@ -10,8 +10,8 @@
 core = {}
 
 --- compression
---- @description Gets the compression method used by an SSL connection
---- @example local comp, err = core.compression(ssl)
+-- Gets the compression method used by an SSL connection
+-- example:  local comp, err = core.compression(ssl)
 --- @occurrences 1
 ---@param ssl userdata -- SSL connection object
 ---@return string|nil -- Compression method or nil on error
@@ -19,15 +19,15 @@ core = {}
 function core:compression(ssl) end
 
 --- copyright
---- @description Returns the LuaSec copyright information
---- @example local info = core.copyright()
+-- Returns the LuaSec copyright information
+-- example:  local info = core.copyright()
 --- @occurrences 1
 ---@return string -- Copyright string
 function core:copyright() end
 
 --- create
---- @description Creates a new SSL connection from a context
---- @example local s, msg = core.create(ctx)
+-- Creates a new SSL connection from a context
+-- example:  local s, msg = core.create(ctx)
 --- @occurrences 1
 ---@param ctx userdata -- SSL context
 ---@return userdata|nil -- SSL connection or nil on error
@@ -35,8 +35,8 @@ function core:copyright() end
 function core:create(ctx) end
 
 --- info
---- @description Gets information about an SSL connection
---- @example local str, bits, algbits, protocol = core.info(ssl)
+-- Gets information about an SSL connection
+-- example:  local str, bits, algbits, protocol = core.info(ssl)
 --- @occurrences 1
 ---@param ssl userdata -- SSL connection object
 ---@return string|nil -- Cipher info string
@@ -46,8 +46,8 @@ function core:create(ctx) end
 function core:info(ssl) end
 
 --- setfd
---- @description Sets the file descriptor for an SSL connection
---- @example core.setfd(s, sock:getfd())
+-- Sets the file descriptor for an SSL connection
+-- example:  core.setfd(s, sock:getfd())
 --- @occurrences 1
 ---@param ssl userdata -- SSL connection object
 ---@param fd integer -- File descriptor
@@ -55,8 +55,8 @@ function core:info(ssl) end
 function core:setfd(ssl, fd) end
 
 --- setmethod
---- @description Sets the SSL method for a context
---- @example core.setmethod(ctx, 'TLSv1_2')
+-- Sets the SSL method for a context
+-- example:  core.setmethod(ctx, 'TLSv1_2')
 --- @occurrences 1
 ---@param ctx userdata -- SSL context
 ---@param method string -- Method name (e.g. 'TLSv1_2')

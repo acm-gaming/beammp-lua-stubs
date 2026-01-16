@@ -20,7 +20,11 @@
 ```lua
 function scenetree.decalRoadContainsPoint(
   objectId: integer,
-  point: Point3F
+  point: Point3F {
+    x = number,
+    y = number,
+    z = number,
+}
 ) -> contained boolean
 ```
 @param `objectId` - Decal road object ID
@@ -46,12 +50,12 @@ Checks if a point is within a decal road object
 ### scenetree.findClassObjects
 ---
 ```lua
-function scenetree.findClassObjects(className: string) -> names table<string>
+function scenetree.findClassObjects(className: string) -> names string[]
 ```
 @param `className` - Class name to search for (e.g. 'BeamNGTrigger', 'BeamNGVehicle')
 
 
-@return `names` - Array of object names matching the class
+@return `names` - Array of object names matching the class (empty if none found)
 
 
 
@@ -115,12 +119,12 @@ Finds an object by its ID
 ### scenetree.findSubClassObjects
 ---
 ```lua
-function scenetree.findSubClassObjects(className: string) -> objects table?
+function scenetree.findSubClassObjects(className: string) -> names string[]?
 ```
 @param `className` - Class name to search for subclasses of
 
 
-@return `objects` - Array of matching objects or nil
+@return `names` - Array of object names matching the class
 
 
 
@@ -138,10 +142,10 @@ Finds all objects that are subclasses of a specific class
 ### scenetree.getAllObjects
 ---
 ```lua
-function scenetree.getAllObjects() -> objects table?
+function scenetree.getAllObjects() -> names string[]?
 ```
 
-@return `objects` - Array of all scene objects or nil
+@return `names` - Array of all scene object names
 
 
 

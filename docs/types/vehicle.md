@@ -29,6 +29,8 @@ function vehicle.addVehicle(
 
 
 addVehicle
+Adds a vehicle to the vehicle module for tracking
+example:  self.mgr.modules.vehicle:addVehicle(veh, {dontDelete = true})
 
 
 
@@ -36,8 +38,6 @@ addVehicle
 
 
 
-@description Adds a vehicle to the vehicle module for tracking
-@example self.mgr.modules.vehicle:addVehicle(veh, {dontDelete = true})
 @occurrences 6
 
 
@@ -52,6 +52,8 @@ function vehicle.delete() ->  nil
 
 
 delete
+Deletes the vehicle object from the scene
+example:  obj:delete()
 
 
 
@@ -59,8 +61,6 @@ delete
 
 
 
-@description Deletes the vehicle object from the scene
-@example obj:delete()
 @occurrences 2
 
 
@@ -91,6 +91,8 @@ function vehicle.engineSoundInit(
 
 
 engineSoundInit
+Initializes the engine sound with the specified parameters
+example:  vehicle:engineSoundInit(engineId, jsonPath, nodeIdArray, 1, 1)
 
 
 
@@ -98,8 +100,6 @@ engineSoundInit
 
 
 
-@description Initializes the engine sound with the specified parameters
-@example vehicle:engineSoundInit(engineId, jsonPath, nodeIdArray, 1, 1)
 @occurrences 2
 
 
@@ -121,6 +121,8 @@ function vehicle.engineSoundNodes(
 
 
 engineSoundNodes
+Sets the exhaust sound nodes for the specified engine
+example:  vehicle:engineSoundNodes(engineId, nodeIdPairArray)
 
 
 
@@ -128,8 +130,6 @@ engineSoundNodes
 
 
 
-@description Sets the exhaust sound nodes for the specified engine
-@example vehicle:engineSoundNodes(engineId, nodeIdPairArray)
 @occurrences 1
 
 
@@ -154,6 +154,8 @@ function vehicle.engineSoundParameter(
 
 
 engineSoundParameter
+Sets a single engine sound parameter
+example:  vehicle:engineSoundParameter(engineId, "rpm", 3000)
 
 
 
@@ -161,8 +163,6 @@ engineSoundParameter
 
 
 
-@description Sets a single engine sound parameter
-@example vehicle:engineSoundParameter(engineId, "rpm", 3000)
 @occurrences 1
 
 
@@ -184,6 +184,8 @@ function vehicle.engineSoundParameterList(
 
 
 engineSoundParameterList
+Sets multiple engine sound parameters at once
+example:  vehicle:engineSoundParameterList(engineId, {wet_level = 0, dry_level = 1})
 
 
 
@@ -191,8 +193,6 @@ engineSoundParameterList
 
 
 
-@description Sets multiple engine sound parameters at once
-@example vehicle:engineSoundParameterList(engineId, {wet_level = 0, dry_level = 1})
 @occurrences 3
 
 
@@ -220,6 +220,8 @@ function vehicle.engineSoundUpdate(
 
 
 engineSoundUpdate
+Updates the engine sound with current RPM and load values
+example:  vehicle:engineSoundUpdate(engineId, rpm, onLoad, engineVolume)
 
 
 
@@ -227,8 +229,6 @@ engineSoundUpdate
 
 
 
-@description Updates the engine sound with current RPM and load values
-@example vehicle:engineSoundUpdate(engineId, rpm, onLoad, engineVolume)
 @occurrences 1
 
 
@@ -245,6 +245,8 @@ function vehicle.getColorFTable() ->  table
 
 
 getColorFTable
+Returns the vehicle's color table
+example:  local colorTable = vehicle:getColorFTable()
 
 
 
@@ -252,8 +254,6 @@ getColorFTable
 
 
 
-@description Returns the vehicle's color table
-@example local colorTable = vehicle:getColorFTable()
 @occurrences 1
 
 
@@ -274,6 +274,8 @@ function vehicle.getDirectionVector() ->  vec3 {
 
 
 getDirectionVector
+Returns the forward direction vector of the vehicle
+example:  local dir = vec3(playerVehicle:getDirectionVector()):normalized()
 
 
 
@@ -281,8 +283,6 @@ getDirectionVector
 
 
 
-@description Returns the forward direction vector of the vehicle
-@example local dir = vec3(playerVehicle:getDirectionVector()):normalized()
 @occurrences 20
 
 
@@ -303,6 +303,8 @@ function vehicle.getDirectionVectorUp() ->  vec3 {
 
 
 getDirectionVectorUp
+Returns the up direction vector of the vehicle
+example:  local up = obj:getDirectionVectorUp()
 
 
 
@@ -310,8 +312,6 @@ getDirectionVectorUp
 
 
 
-@description Returns the up direction vector of the vehicle
-@example local up = obj:getDirectionVectorUp()
 @occurrences 15
 
 
@@ -335,6 +335,8 @@ function vehicle.getDynDataFieldbyName(
 
 
 getDynDataFieldbyName
+Gets a dynamic data field value by name
+example:  local val = obj:getDynDataFieldbyName(fieldName, 0)
 
 
 
@@ -342,8 +344,6 @@ getDynDataFieldbyName
 
 
 
-@description Gets a dynamic data field value by name
-@example local val = obj:getDynDataFieldbyName(fieldName, 0)
 @occurrences 3
 
 
@@ -367,6 +367,8 @@ function vehicle.getField(
 
 
 getField
+Gets a field value by name and index
+example:  local parentId = tonumber(veh:getField("parentGroup", 0))
 
 
 
@@ -374,8 +376,6 @@ getField
 
 
 
-@description Gets a field value by name and index
-@example local parentId = tonumber(veh:getField("parentGroup", 0))
 @occurrences 6
 
 
@@ -394,6 +394,8 @@ function vehicle.getFlexmesh(fid: integer) ->  table?
 
 
 getFlexmesh
+Gets a flexmesh object by its ID
+example:  local f = vehicleObj:getFlexmesh(fid)
 
 
 
@@ -401,8 +403,6 @@ getFlexmesh
 
 
 
-@description Gets a flexmesh object by its ID
-@example local f = vehicleObj:getFlexmesh(fid)
 @occurrences 4
 
 
@@ -419,6 +419,8 @@ function vehicle.getID() ->  integer
 
 
 getID
+Returns the unique ID of the vehicle object
+example:  local vehId = vehicle:getID()
 
 
 
@@ -426,8 +428,6 @@ getID
 
 
 
-@description Returns the unique ID of the vehicle object
-@example local vehId = vehicle:getID()
 @occurrences 22
 
 
@@ -444,6 +444,8 @@ function vehicle.getId() ->  integer
 
 
 getId
+Returns the unique ID of the vehicle object (lowercase variant)
+example:  local vehId = vehicle:getId()
 
 
 
@@ -451,8 +453,6 @@ getId
 
 
 
-@description Returns the unique ID of the vehicle object (lowercase variant)
-@example local vehId = vehicle:getId()
 @occurrences 9
 
 
@@ -475,6 +475,8 @@ function vehicle.getInitialNodePosition(nodeID: integer) ->  vec3 {
 
 
 getInitialNodePosition
+Returns the initial position of a node before physics simulation
+example:  local refnode = rot * veh:getInitialNodePosition(veh:getRefNodeId())
 
 
 
@@ -482,8 +484,6 @@ getInitialNodePosition
 
 
 
-@description Returns the initial position of a node before physics simulation
-@example local refnode = rot * veh:getInitialNodePosition(veh:getRefNodeId())
 @occurrences 3
 
 
@@ -500,6 +500,8 @@ function vehicle.getInternalName() ->  string
 
 
 getInternalName
+Returns the internal name of the vehicle object
+example:  local name = vehicle:getInternalName()
 
 
 
@@ -507,8 +509,6 @@ getInternalName
 
 
 
-@description Returns the internal name of the vehicle object
-@example local name = vehicle:getInternalName()
 @occurrences 2
 
 
@@ -525,6 +525,8 @@ function vehicle.getJBeamFilename() ->  string
 
 
 getJBeamFilename
+Returns the JBeam filename of the vehicle model
+example:  local jbeamFilename = v:getJBeamFilename()
 
 
 
@@ -532,8 +534,6 @@ getJBeamFilename
 
 
 
-@description Returns the JBeam filename of the vehicle model
-@example local jbeamFilename = v:getJBeamFilename()
 @occurrences 7
 
 
@@ -550,6 +550,8 @@ function vehicle.getName() ->  string
 
 
 getName
+Returns the name of the vehicle object
+example:  local name = obj:getName()
 
 
 
@@ -557,8 +559,6 @@ getName
 
 
 
-@description Returns the name of the vehicle object
-@example local name = obj:getName()
 @occurrences 4
 
 
@@ -581,6 +581,8 @@ function vehicle.getNodeAbsPosition(nodeID: integer) ->  vec3 {
 
 
 getNodeAbsPosition
+Returns the absolute world position of a node
+example:  local nodePos = vEditor.vehicle:getNodeAbsPosition(nodeID)
 
 
 
@@ -588,8 +590,6 @@ getNodeAbsPosition
 
 
 
-@description Returns the absolute world position of a node
-@example local nodePos = vEditor.vehicle:getNodeAbsPosition(nodeID)
 @occurrences 9
 
 
@@ -612,6 +612,8 @@ function vehicle.getNodeAbsPositionXYZ(nodeID: integer) ->  vec3 {
 
 
 getNodeAbsPositionXYZ
+Returns the absolute world position of a node as XYZ components
+example:  local x, y, z = vehicle:getNodeAbsPositionXYZ(nodeID)
 
 
 
@@ -619,8 +621,6 @@ getNodeAbsPositionXYZ
 
 
 
-@description Returns the absolute world position of a node as XYZ components
-@example local x, y, z = vehicle:getNodeAbsPositionXYZ(nodeID)
 @occurrences 1
 
 
@@ -637,6 +637,8 @@ function vehicle.getNodeCount() ->  integer
 
 
 getNodeCount
+Returns the total number of nodes in the vehicle
+example:  local nodecount = obj:getNodeCount()
 
 
 
@@ -644,8 +646,6 @@ getNodeCount
 
 
 
-@description Returns the total number of nodes in the vehicle
-@example local nodecount = obj:getNodeCount()
 @occurrences 2
 
 
@@ -668,6 +668,8 @@ function vehicle.getNodePosition(nodeID: integer) ->  vec3 {
 
 
 getNodePosition
+Returns the position of a node relative to the vehicle
+example:  local pos = veh:getNodePosition(nodeID)
 
 
 
@@ -675,8 +677,6 @@ getNodePosition
 
 
 
-@description Returns the position of a node relative to the vehicle
-@example local pos = veh:getNodePosition(nodeID)
 @occurrences 8
 
 
@@ -699,6 +699,8 @@ function vehicle.getNodeVelocity(nodeID: integer) ->  vec3 {
 
 
 getNodeVelocity
+Returns the velocity vector of a node
+example:  local vel = veh:getNodeVelocity(nodeID)
 
 
 
@@ -706,8 +708,6 @@ getNodeVelocity
 
 
 
-@description Returns the velocity vector of a node
-@example local vel = veh:getNodeVelocity(nodeID)
 @occurrences 2
 
 
@@ -728,6 +728,8 @@ function vehicle.getPosition() ->  vec3 {
 
 
 getPosition
+Returns the world position of the vehicle
+example:  local pos = veh:getPosition()
 
 
 
@@ -735,8 +737,6 @@ getPosition
 
 
 
-@description Returns the world position of the vehicle
-@example local pos = veh:getPosition()
 @occurrences 40
 
 
@@ -755,6 +755,8 @@ function vehicle.getProp(pid: integer) ->  table?
 
 
 getProp
+Gets a prop object by its ID
+example:  local propObj = vEditor.vehicle:getProp(prop.pid)
 
 
 
@@ -762,8 +764,6 @@ getProp
 
 
 
-@description Gets a prop object by its ID
-@example local propObj = vEditor.vehicle:getProp(prop.pid)
 @occurrences 8
 
 
@@ -780,6 +780,8 @@ function vehicle.getRefNodeId() ->  integer
 
 
 getRefNodeId
+Returns the reference node ID of the vehicle
+example:  local refNodeId = veh:getRefNodeId()
 
 
 
@@ -787,8 +789,6 @@ getRefNodeId
 
 
 
-@description Returns the reference node ID of the vehicle
-@example local refNodeId = veh:getRefNodeId()
 @occurrences 2
 
 
@@ -810,6 +810,8 @@ function vehicle.getRefNodeRotation() ->  quat {
 
 
 getRefNodeRotation
+Returns the rotation quaternion of the reference node
+example:  local rot = veh:getRefNodeRotation()
 
 
 
@@ -817,8 +819,6 @@ getRefNodeRotation
 
 
 
-@description Returns the rotation quaternion of the reference node
-@example local rot = veh:getRefNodeRotation()
 @occurrences 2
 
 
@@ -840,6 +840,8 @@ function vehicle.getRotation() ->  quat {
 
 
 getRotation
+Returns the rotation quaternion of the vehicle
+example:  local rot = veh:getRotation()
 
 
 
@@ -847,8 +849,6 @@ getRotation
 
 
 
-@description Returns the rotation quaternion of the vehicle
-@example local rot = veh:getRotation()
 @occurrences 2
 
 
@@ -865,6 +865,8 @@ function vehicle.getSpawnWorldOOBB() ->  OrientedBox3F
 
 
 getSpawnWorldOOBB
+Returns the oriented bounding box of the vehicle in world space
+example:  local carBB = car:getSpawnWorldOOBB()
 
 
 
@@ -872,8 +874,6 @@ getSpawnWorldOOBB
 
 
 
-@description Returns the oriented bounding box of the vehicle in world space
-@example local carBB = car:getSpawnWorldOOBB()
 @occurrences 9
 
 
@@ -890,6 +890,8 @@ function vehicle.getSpawnedVehicles() ->  table
 
 
 getSpawnedVehicles
+Returns a list of spawned vehicles tracked by the vehicle module
+example:  for _, v in ipairs(self.mgr.modules.vehicle:getSpawnedVehicles()) do
 
 
 
@@ -897,8 +899,6 @@ getSpawnedVehicles
 
 
 
-@description Returns a list of spawned vehicles tracked by the vehicle module
-@example for _, v in ipairs(self.mgr.modules.vehicle:getSpawnedVehicles()) do
 @occurrences 1
 
 
@@ -917,6 +917,8 @@ function vehicle.getVehicle(vehicleID: integer) ->  table
 
 
 getVehicle
+Gets a vehicle data object by vehicle ID
+example:  local vehData = self.mgr.modules.vehicle:getVehicle(vehId)
 
 
 
@@ -924,8 +926,6 @@ getVehicle
 
 
 
-@description Gets a vehicle data object by vehicle ID
-@example local vehData = self.mgr.modules.vehicle:getVehicle(vehId)
 @occurrences 5
 
 
@@ -946,6 +946,8 @@ function vehicle.getVelocity() ->  vec3 {
 
 
 getVelocity
+Returns the velocity vector of the vehicle
+example:  local vel = obj:getVelocity()
 
 
 
@@ -953,8 +955,6 @@ getVelocity
 
 
 
-@description Returns the velocity vector of the vehicle
-@example local vel = obj:getVelocity()
 @occurrences 2
 
 
@@ -973,6 +973,8 @@ function vehicle.getWheelAxisNodes(wheelIndex: integer) ->  table
 
 
 getWheelAxisNodes
+Returns the axis node IDs for a wheel
+example:  local axisNodes = vehicle:getWheelAxisNodes(i)
 
 
 
@@ -980,8 +982,6 @@ getWheelAxisNodes
 
 
 
-@description Returns the axis node IDs for a wheel
-@example local axisNodes = vehicle:getWheelAxisNodes(i)
 @occurrences 6
 
 
@@ -998,6 +998,8 @@ function vehicle.getWheelCount() ->  integer
 
 
 getWheelCount
+Returns the number of wheels on the vehicle
+example:  for i=0, vehicle:getWheelCount()-1 do
 
 
 
@@ -1005,8 +1007,6 @@ getWheelCount
 
 
 
-@description Returns the number of wheels on the vehicle
-@example for i=0, vehicle:getWheelCount()-1 do
 @occurrences 7
 
 
@@ -1023,6 +1023,8 @@ function vehicle.isBus() ->  boolean
 
 
 isBus
+Returns whether the vehicle is a bus
+example:  if vehicle:isBus() then
 
 
 
@@ -1030,8 +1032,6 @@ isBus
 
 
 
-@description Returns whether the vehicle is a bus
-@example if vehicle:isBus() then
 @occurrences 1
 
 
@@ -1048,6 +1048,8 @@ function vehicle.isBusDoorOpen() ->  boolean
 
 
 isBusDoorOpen
+Returns whether the bus door is open
+example:  if vehicle:isBusDoorOpen() then
 
 
 
@@ -1055,8 +1057,6 @@ isBusDoorOpen
 
 
 
-@description Returns whether the bus door is open
-@example if vehicle:isBusDoorOpen() then
 @occurrences 1
 
 
@@ -1073,6 +1073,8 @@ function vehicle.isBusKneel() ->  boolean
 
 
 isBusKneel
+Returns whether the bus is kneeling
+example:  if vehicle:isBusKneel() then
 
 
 
@@ -1080,8 +1082,6 @@ isBusKneel
 
 
 
-@description Returns whether the bus is kneeling
-@example if vehicle:isBusKneel() then
 @occurrences 1
 
 
@@ -1105,6 +1105,8 @@ function vehicle.isCoupledTo(
 
 
 isCoupledTo
+Checks if a vehicle is coupled to another vehicle
+example:  local coupled = self.mgr.modules.vehicle:isCoupledTo(vehId, trailerId)
 
 
 
@@ -1112,8 +1114,6 @@ isCoupledTo
 
 
 
-@description Checks if a vehicle is coupled to another vehicle
-@example local coupled = self.mgr.modules.vehicle:isCoupledTo(vehId, trailerId)
 @occurrences 2
 
 
@@ -1130,6 +1130,8 @@ function vehicle.isReady() ->  boolean
 
 
 isReady
+Returns whether the vehicle is ready (fully loaded)
+example:  if vehicle:isReady() then
 
 
 
@@ -1137,8 +1139,6 @@ isReady
 
 
 
-@description Returns whether the vehicle is ready (fully loaded)
-@example if vehicle:isReady() then
 @occurrences 1
 
 
@@ -1155,6 +1155,8 @@ function vehicle.isSubClassOf(className: string) ->  boolean
 
 
 isSubClassOf
+Checks if the object is a subclass of the given class name
+example:  if not vehicle:isSubClassOf('BeamNGVehicle') then
 
 
 
@@ -1162,8 +1164,6 @@ isSubClassOf
 
 
 
-@description Checks if the object is a subclass of the given class name
-@example if not vehicle:isSubClassOf('BeamNGVehicle') then
 @occurrences 1
 
 
@@ -1180,6 +1180,8 @@ function vehicle.queueLuaCommand(luaCode: string) ->  nil
 
 
 queueLuaCommand
+Queues a Lua command to be executed in the vehicle's Lua environment
+example:  veh:queueLuaCommand("obj:requestReset(RESET_PHYSICS)")
 
 
 
@@ -1187,8 +1189,6 @@ queueLuaCommand
 
 
 
-@description Queues a Lua command to be executed in the vehicle's Lua environment
-@example veh:queueLuaCommand("obj:requestReset(RESET_PHYSICS)")
 @occurrences 31
 
 
@@ -1205,6 +1205,8 @@ function vehicle.registerBusChangeNotification(vehicleID: integer) ->  nil
 
 
 registerBusChangeNotification
+Registers for bus kneel and door open change notifications
+example:  self.mgr.modules.vehicle:registerBusChangeNotification(vehId)
 
 
 
@@ -1212,8 +1214,6 @@ registerBusChangeNotification
 
 
 
-@description Registers for bus kneel and door open change notifications
-@example self.mgr.modules.vehicle:registerBusChangeNotification(vehId)
 @occurrences 1
 
 
@@ -1228,6 +1228,8 @@ function vehicle.reset() ->  nil
 
 
 reset
+Resets the vehicle to its initial state
+example:  vehicle:reset()
 
 
 
@@ -1235,8 +1237,6 @@ reset
 
 
 
-@description Resets the vehicle to its initial state
-@example vehicle:reset()
 @occurrences 1
 
 
@@ -1251,6 +1251,8 @@ function vehicle.resetBrokenFlexMesh() ->  nil
 
 
 resetBrokenFlexMesh
+Resets broken flexmesh components of the vehicle
+example:  vehicle:resetBrokenFlexMesh()
 
 
 
@@ -1258,8 +1260,6 @@ resetBrokenFlexMesh
 
 
 
-@description Resets broken flexmesh components of the vehicle
-@example vehicle:resetBrokenFlexMesh()
 @occurrences 2
 
 
@@ -1276,6 +1276,8 @@ function vehicle.respawn(config: string) ->  nil
 
 
 respawn
+Respawns the vehicle with a new configuration
+example:  veh:respawn(serialize(vehicleConfig))
 
 
 
@@ -1283,8 +1285,6 @@ respawn
 
 
 
-@description Respawns the vehicle with a new configuration
-@example veh:respawn(serialize(vehicleConfig))
 @occurrences 1
 
 
@@ -1309,6 +1309,8 @@ function vehicle.setDynDataFieldbyName(
 
 
 setDynDataFieldbyName
+Sets a dynamic data field on the object by name
+example:  veh:setDynDataFieldbyName("autoEnterVehicle", 0, autoEnterVehicle)
 
 
 
@@ -1316,8 +1318,6 @@ setDynDataFieldbyName
 
 
 
-@description Sets a dynamic data field on the object by name
-@example veh:setDynDataFieldbyName("autoEnterVehicle", 0, autoEnterVehicle)
 @occurrences 1
 
 
@@ -1342,6 +1342,8 @@ function vehicle.setField(
 
 
 setField
+Sets a field value on the object
+example:  coronaMat:setField("mapTo", 0, "corona.png")
 
 
 
@@ -1349,8 +1351,6 @@ setField
 
 
 
-@description Sets a field value on the object
-@example coronaMat:setField("mapTo", 0, "corona.png")
 @occurrences 2
 
 
@@ -1367,6 +1367,8 @@ function vehicle.setFlexmeshDebugMode(enabled: boolean) ->  nil
 
 
 setFlexmeshDebugMode
+Enables or disables flexmesh debug rendering mode
+example:  vEditor.vehicle:setFlexmeshDebugMode(true)
 
 
 
@@ -1374,8 +1376,6 @@ setFlexmeshDebugMode
 
 
 
-@description Enables or disables flexmesh debug rendering mode
-@example vEditor.vehicle:setFlexmeshDebugMode(true)
 @occurrences 3
 
 
@@ -1397,6 +1397,8 @@ function vehicle.setKeepVehicle(
 
 
 setKeepVehicle
+Sets whether to keep the vehicle when cleaning up (prevents deletion)
+example:  self.mgr.modules.vehicle:setKeepVehicle(id, true)
 
 
 
@@ -1404,8 +1406,6 @@ setKeepVehicle
 
 
 
-@description Sets whether to keep the vehicle when cleaning up (prevents deletion)
-@example self.mgr.modules.vehicle:setKeepVehicle(id, true)
 @occurrences 2
 
 
@@ -1432,6 +1432,8 @@ function vehicle.setMeshAlpha(
 
 
 setMeshAlpha
+Sets the alpha transparency of a mesh
+example:  veh:setMeshAlpha(1, "", false)
 
 
 
@@ -1439,8 +1441,6 @@ setMeshAlpha
 
 
 
-@description Sets the alpha transparency of a mesh
-@example veh:setMeshAlpha(1, "", false)
 @occurrences 8
 
 
@@ -1462,6 +1462,8 @@ function vehicle.setMeshAnnotationColor(
 
 
 setMeshAnnotationColor
+Sets the annotation color for a mesh part
+example:  vehicle:setMeshAnnotationColor(part, color)
 
 
 
@@ -1469,8 +1471,6 @@ setMeshAnnotationColor
 
 
 
-@description Sets the annotation color for a mesh part
-@example vehicle:setMeshAnnotationColor(part, color)
 @occurrences 1
 
 
@@ -1507,6 +1507,8 @@ function vehicle.setPositionRotation(
 
 
 setPositionRotation
+Sets the position and rotation of the vehicle
+example:  veh:setPositionRotation(pos.x, pos.y, pos.z, rot.x, rot.y, rot.z, rot.w)
 
 
 
@@ -1514,8 +1516,6 @@ setPositionRotation
 
 
 
-@description Sets the position and rotation of the vehicle
-@example veh:setPositionRotation(pos.x, pos.y, pos.z, rot.x, rot.y, rot.z, rot.w)
 @occurrences 2
 
 
@@ -1530,6 +1530,8 @@ function vehicle.toggleEditMode() ->  nil
 
 
 toggleEditMode
+Toggles the vehicle's edit mode for in-place editing
+example:  vehicle:toggleEditMode()
 
 
 
@@ -1537,8 +1539,6 @@ toggleEditMode
 
 
 
-@description Toggles the vehicle's edit mode for in-place editing
-@example vehicle:toggleEditMode()
 @occurrences 1
 
 

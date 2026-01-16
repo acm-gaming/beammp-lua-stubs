@@ -8,26 +8,26 @@
 Box3F = {}
 
 --- Creates a new axis-aligned bounding box
---- @description Creates a new Box3F for axis-aligned bounding box operations
---- @example local box = Box3F()
+-- Creates a new Box3F for axis-aligned bounding box operations
+-- example:  local box = Box3F()
 ---@return Box3F -- The new bounding box
 function Box3F() end
 
 --- Extends the box to include a point
---- @description Expands the bounding box to include the given point
---- @example box:extend(pos)
+-- Expands the bounding box to include the given point
+-- example:  box:extend(pos)
 ---@param point vec3 -- Point to include
 ---@return nil
 function Box3F:extend(point) end
 
 --- Gets the center of the box
---- @description Returns the center position of the bounding box
---- @example local center = box:getCenter()
+-- Returns the center position of the bounding box
+-- example:  local center = box:getCenter()
 ---@return vec3 -- Center position
 function Box3F:getCenter() end
 
 --- Gets the extents of the box
---- @description Returns the extents (half-widths) of the bounding box
---- @example local extents = box:getExtents()
+-- Returns the extents (half-widths) of the bounding box
+-- example:  local extents = box:getExtents()
 ---@return vec3 -- Box extents
 function Box3F:getExtents() end

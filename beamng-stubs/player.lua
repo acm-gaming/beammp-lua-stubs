@@ -10,7 +10,7 @@
 player = {}
 
 --- getFields
---- @description Returns a table of field metadata for the player object
+-- Returns a table of field metadata for the player object
 --- @occurrences 1
 ---@return table
 function player:getFields() end
@@ -21,7 +21,7 @@ function player:getFields() end
 function player:getPosition() end
 
 --- getRefNodeMatrix
---- @description Gets the reference node transform of the player object
+-- Gets the reference node transform of the player object
 --- @occurrences 1
 ---@return MatrixF
 function player:getRefNodeMatrix() end

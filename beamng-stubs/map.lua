@@ -10,15 +10,15 @@
 map = {}
 
 --- assureLoad
---- @description Ensures the map data is loaded, reloading if necessary
---- @example map.assureLoad()
+-- Ensures the map data is loaded, reloading if necessary
+-- example:  map.assureLoad()
 --- @occurrences 5
 ---@return nil
 function map:assureLoad() end
 
 --- findClosestRoad
---- @description Finds the road edge closest to a position
---- @example local n1Id, n2Id, dist = map.findClosestRoad(pos)
+-- Finds the road edge closest to a position
+-- example:  local n1Id, n2Id, dist = map.findClosestRoad(pos)
 --- @occurrences 32
 ---@param pos vec3 -- Position to search from
 ---@param searchRadiusLim number|nil -- Optional search radius limit (default 200)
@@ -28,35 +28,35 @@ function map:assureLoad() end
 function map:findClosestRoad(pos, searchRadiusLim) end
 
 --- getGraphpath
---- @description Gets the navigation graph path object
---- @example local graphPath = map.getGraphpath()
+-- Gets the navigation graph path object
+-- example:  local graphPath = map.getGraphpath()
 --- @occurrences 17
 ---@return table -- Graphpath object with graph, positions, radius, etc.
 function map:getGraphpath() end
 
 --- getManualWaypoints
---- @description Gets manually placed waypoints
---- @example for name, n in pairs(map.getManualWaypoints()) do
+-- Gets manually placed waypoints
+-- example:  for name, n in pairs(map.getManualWaypoints()) do
 --- @occurrences 3
 ---@return table -- Table of manual waypoints keyed by name
 function map:getManualWaypoints() end
 
 --- getMap
---- @description Gets the map data with nodes and edges
---- @example local mapData = map.getMap()
+-- Gets the map data with nodes and edges
+-- example:  local mapData = map.getMap()
 --- @occurrences 87
 ---@return table -- Map object with nodes table
 function map:getMap() end
 
 --- getNodeLinkCount
---- @description Gets the number of links for a navigation graph node
+-- Gets the number of links for a navigation graph node
 --- @occurrences 6
 ---@param nodeId string -- Node ID
 ---@return integer -- Number of links (-1 if node not found)
 function map:getNodeLinkCount(nodeId) end
 
 --- getNodesFromPathDist
---- @description Finds nodes and xnorm based on distance along path
+-- Finds nodes and xnorm based on distance along path
 --- @occurrences 1
 ---@param path table -- Array of node IDs
 ---@param dist number -- Distance along path
@@ -66,8 +66,8 @@ function map:getNodeLinkCount(nodeId) end
 function map:getNodesFromPathDist(path, dist) end
 
 --- getPath
---- @description Gets a path between two nodes with optional filtering
---- @example local path = map.getPath(name_a, name_b)
+-- Gets a path between two nodes with optional filtering
+-- example:  local path = map.getPath(name_a, name_b)
 --- @occurrences 11
 ---@param start string -- Starting node ID
 ---@param target string -- Target node ID
@@ -79,8 +79,8 @@ function map:getNodesFromPathDist(path, dist) end
 function map:getPath(start, target, cutOffDrivability, dirMult, penaltyAboveCutoff, penaltyBelowCutoff) end
 
 --- getPointToPointPath
---- @description Gets a path between two world positions
---- @example local path = map.getPointToPointPath(from.pos, to.pos)
+-- Gets a path between two world positions
+-- example:  local path = map.getPointToPointPath(from.pos, to.pos)
 --- @occurrences 2
 ---@param startPos vec3 -- Starting position
 ---@param targetPos vec3 -- Target position
@@ -94,8 +94,8 @@ function map:getPath(start, target, cutOffDrivability, dirMult, penaltyAboveCuto
 function map:getPointToPointPath(startPos, targetPos, cutOffDrivability, dirMult, penaltyAboveCutoff, penaltyBelowCutoff, wD, wZ) end
 
 --- getRoadRules
---- @description Gets the road rules for the current map
---- @example local legalSide = map.getRoadRules().rightHandDrive and -1 or 1
+-- Gets the road rules for the current map
+-- example:  local legalSide = map.getRoadRules().rightHandDrive and -1 or 1
 --- @occurrences 7
 ---@return table -- Road rules with rightHandDrive boolean
 function map:getRoadRules() end
@@ -112,7 +112,7 @@ function map:getTrackedObjects() end
 function map:gmatch(pattern) end
 
 --- isCrashAvoidable
---- @description Checks if a position is safe to spawn given an object in motion
+-- Checks if a position is safe to spawn given an object in motion
 --- @occurrences 1
 ---@param objectID integer -- ID of object to check collision against
 ---@param pos vec3 -- Position to check
@@ -121,13 +121,13 @@ function map:gmatch(pattern) end
 function map:isCrashAvoidable(objectID, pos, radius) end
 
 --- load
---- @description Loads the map data
+-- Loads the map data
 --- @occurrences 1
 ---@return nil
 function map:load() end
 
 --- objectData
---- @description Receives vehicle data from vehicles for tracking
+-- Receives vehicle data from vehicles for tracking
 --- @occurrences 1
 ---@param objId integer -- Object ID
 ---@param isactive boolean -- Whether object is active
@@ -138,21 +138,21 @@ function map:load() end
 function map:objectData(objId, isactive, damage, states, objectCollisions) end
 
 --- onFilesChanged
---- @description Callback when files change, reloads map if navgraph files changed
+-- Callback when files change, reloads map if navgraph files changed
 --- @occurrences 1
 ---@param files table -- Table of changed files
 ---@return nil
 function map:onFilesChanged(files) end
 
 --- onWaypoint
---- @description Callback when a waypoint event occurs
+-- Callback when a waypoint event occurs
 --- @occurrences 1
 ---@param args table -- Waypoint arguments
 ---@return nil
 function map:onWaypoint(args) end
 
 --- optimizePath
---- @description Optimizes a path for smoother navigation
+-- Optimizes a path for smoother navigation
 --- @occurrences 1
 ---@param path table -- Array of node IDs
 ---@param s any -- Optimization parameter
@@ -160,7 +160,7 @@ function map:onWaypoint(args) end
 function map:optimizePath(path, s) end
 
 --- request
---- @description Requests map data for an object
+-- Requests map data for an object
 --- @occurrences 1
 ---@param objId integer -- Object ID
 ---@param objBuildSerial integer -- Build serial number
@@ -168,14 +168,14 @@ function map:optimizePath(path, s) end
 function map:request(objId, objBuildSerial) end
 
 --- reset
---- @description Resets and reloads the map data
+-- Resets and reloads the map data
 --- @occurrences 14
 ---@param customMapNodes table|nil -- Optional custom map nodes
 ---@return nil
 function map:reset(customMapNodes) end
 
 --- safeTeleport
---- @description Wrapper function for spawn.safeTeleport()
+-- Wrapper function for spawn.safeTeleport()
 --- @occurrences 1
 ---@param vehId integer|string -- Vehicle ID or name
 ---@param posX number -- X position
@@ -200,23 +200,23 @@ function map:safeTeleport(vehId, posX, posY, posZ, rotX, rotY, rotZ, rotW, check
 function map:setEditorState(enabled) end
 
 --- setEnabled
---- @description Enables or disables the map navigation system
---- @example map:setEnabled(true)
+-- Enables or disables the map navigation system
+-- example:  map:setEnabled(true)
 --- @occurrences 5
 ---@param enabled boolean -- Whether to enable the map
 ---@return boolean -- Previous enabled state
 function map:setEnabled(enabled) end
 
 --- setTrafficExclusionZones
---- @description Sets traffic exclusion zones for navigation
---- @example map.setTrafficExclusionZones(zones)
+-- Sets traffic exclusion zones for navigation
+-- example:  map.setTrafficExclusionZones(zones)
 --- @occurrences 1
 ---@param zones table -- Array of traffic exclusion zone objects
 ---@return nil
 function map:setTrafficExclusionZones(zones) end
 
 --- surfaceNormal
---- @description Approximates a terrain surface normal around a point
+-- Approximates a terrain surface normal around a point
 --- @occurrences 10
 ---@param p vec3
 ---@param r number|nil

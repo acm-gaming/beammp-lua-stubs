@@ -15,8 +15,8 @@ input = {}
 function input:accept() end
 
 --- event
---- @description Sends an input event to control vehicle inputs
---- @example input.event("steering", 0.5, FILTER_DIRECT, steeringWheelLock, 1, nil, "ai")
+-- Sends an input event to control vehicle inputs
+-- example:  input.event("steering", 0.5, FILTER_DIRECT, steeringWheelLock, 1, nil, "ai")
 --- @occurrences 69
 ---@param eventName string -- Event name (e.g., "steering", "throttle", "brake", "parkingbrake")
 ---@param value number -- Event value (-1 to 1 for steering, 0 to 1 for throttle/brake)
@@ -29,8 +29,8 @@ function input:accept() end
 function input:event(eventName, value, filterType, lockValue, filterCoef, unused, deviceName) end
 
 --- getMouseInfo
---- @description Gets current mouse position and button information
---- @example local mouseInfo = input.getMouseInfo()
+-- Gets current mouse position and button information
+-- example:  local mouseInfo = input.getMouseInfo()
 --- @occurrences 5
 ---@return table -- Mouse info with x, y coordinates and button states
 function input:getMouseInfo() end
@@ -83,8 +83,8 @@ function input:read_func(size) end
 function input:reset() end
 
 --- setAllowedInputSource
---- @description Sets whether an input source is allowed for a specific action
---- @example input.setAllowedInputSource("mouse", "steering", true)
+-- Sets whether an input source is allowed for a specific action
+-- example:  input.setAllowedInputSource("mouse", "steering", true)
 --- @occurrences 6
 ---@param source string -- Input source name
 ---@param action string -- Action name
@@ -98,8 +98,8 @@ function input:setAllowedInputSource(source, action, allowed) end
 function input:settingsChanged() end
 
 --- toggleEvent
---- @description Toggles an input event on/off
---- @example input.toggleEvent("pause")
+-- Toggles an input event on/off
+-- example:  input.toggleEvent("pause")
 --- @occurrences 1
 ---@param eventName string -- Event name to toggle
 ---@return nil

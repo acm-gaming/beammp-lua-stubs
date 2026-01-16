@@ -11,8 +11,8 @@
 vec3 = {}
 
 --- Creates a new 3D vector
---- @description Creates a new vec3 with the specified x, y, z components
---- @example local pos = vec3(1, 2, 3)
+-- Creates a new vec3 with the specified x, y, z components
+-- example:  local pos = vec3(1, 2, 3)
 ---@param x number -- X component
 ---@param y number -- Y component
 ---@param z number -- Z component

@@ -5,6 +5,8 @@ This repository contains lightweight EmmyLua stub files for BeamMP server script
 
 ⚠️ BeamNG functions are pulled from game lua files, and augmented with *LLMs* so may be incorrect ⚠️
 
+[View Docs](./docs/index.md)
+
 Mark as a Source Root in IntelliJ IDEA
 --------------------------------------
 - Right-click `beamng-lua-stubs` -> `Mark Directory As` -> `Sources Root`.

@@ -28,4 +28,6 @@ function vec3(
 
 
 Creates a new 3D vector
+Creates a new vec3 with the specified x, y, z components
+example:  local pos = vec3(1, 2, 3)
 

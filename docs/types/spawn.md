@@ -19,7 +19,15 @@
 ---
 ```lua
 function spawn.calculateRelativeVehiclePlacement(
-  transform0: MatrixF,
+  transform0: MatrixF {
+    getColumn = function,
+    setColumn = function,
+    mul = function,
+    inverse = function,
+    getPosition = function,
+    toEuler = function,
+    setFromEuler = function,
+},
   coupler0_offset: vec3 {
     x = number,
     y = number,
@@ -31,7 +39,15 @@ function spawn.calculateRelativeVehiclePlacement(
     z = number,
 },
   rotOffset: MatrixF?
-) ->  MatrixF
+) ->  MatrixF {
+    getColumn = function,
+    setColumn = function,
+    mul = function,
+    inverse = function,
+    getPosition = function,
+    toEuler = function,
+    setFromEuler = function,
+}
 ```
 
 
@@ -39,6 +55,7 @@ function spawn.calculateRelativeVehiclePlacement(
 
 
 calculateRelativeVehiclePlacement
+Builds a transform that aligns two couplers between vehicles
 
 
 
@@ -46,9 +63,8 @@ calculateRelativeVehiclePlacement
 
 
 
-@description Builds a transform that aligns two couplers between vehicles
 @occurrences 1
-@example local mat = spawn.calculateRelativeVehiclePlacement(transform0, coupler0, coupler1)
+example:  local mat = spawn.calculateRelativeVehiclePlacement(transform0, coupler0, coupler1)
 
 
 ### spawn.clearCache
@@ -62,6 +78,7 @@ function spawn.clearCache() ->  nil
 
 
 clearCache
+Clears per-frame spawn bounding box cache
 
 
 
@@ -69,7 +86,6 @@ clearCache
 
 
 
-@description Clears per-frame spawn bounding box cache
 @occurrences 1
 
 
@@ -84,6 +100,7 @@ function spawn.pickSpawnPoint(spawnName: string) ->  SceneObject?
 
 
 pickSpawnPoint
+Returns a valid spawn point for a player/camera
 
 
 
@@ -91,9 +108,8 @@ pickSpawnPoint
 
 
 
-@description Returns a valid spawn point for a player/camera
 @occurrences 1
-@example local sp = spawn.pickSpawnPoint("player")
+example:  local sp = spawn.pickSpawnPoint("player")
 
 
 ### spawn.placeTrailer
@@ -122,6 +138,7 @@ function spawn.placeTrailer(
 
 
 placeTrailer
+Positions a trailer relative to a vehicle using coupler offsets
 
 
 
@@ -129,9 +146,8 @@ placeTrailer
 
 
 
-@description Positions a trailer relative to a vehicle using coupler offsets
 @occurrences 3
-@example spawn.placeTrailer(vehId, vehCouplerOffset, trailerReg[vehId].trailerId, trailerCouplerOffset, vehCouplerTag)
+example:  spawn.placeTrailer(vehId, vehCouplerOffset, trailerReg[vehId].trailerId, trailerCouplerOffset, vehCouplerTag)
 
 
 ### spawn.safeTeleport
@@ -421,6 +437,8 @@ function spawn.safeTeleport(
     setPosRot = function,
     setPosition = function,
     setPositionRotation = function,
+    setVelocity = function,
+    setAngularVelocity = function,
     setPrecompressionRatio = function,
     setPropLight = function,
     setSFXparameter = function,
@@ -470,6 +488,7 @@ function spawn.safeTeleport(
 
 
 safeTeleport
+Teleports a vehicle safely, avoiding collisions and optionally resetting
 
 
 
@@ -477,9 +496,8 @@ safeTeleport
 
 
 
-@description Teleports a vehicle safely, avoiding collisions and optionally resetting
 @occurrences 56
-@example safeTeleport(veh, pos, rot, nil, nil, nil, true, options.resetVehicle)
+example:  safeTeleport(veh, pos, rot, nil, nil, nil, true, options.resetVehicle)
 
 
 ### spawn.setVehicleObject
@@ -502,6 +520,9 @@ function spawn.setVehicleObject(
     setTransform = function,
     getWorldBox = function,
     getObjBox = function,
+    setPositionRotation = function,
+    setVelocity = function,
+    setAngularVelocity = function,
 },
   options: table
 ) ->  nil
@@ -512,6 +533,7 @@ function spawn.setVehicleObject(
 
 
 setVehicleObject
+Applies model, config, paint and options to a vehicle SceneObject
 
 
 
@@ -519,7 +541,6 @@ setVehicleObject
 
 
 
-@description Applies model, config, paint and options to a vehicle SceneObject
 @occurrences 2
 
 
@@ -540,6 +561,7 @@ function spawn.spawnVehicle(
 
 
 spawnVehicle
+Creates and registers a vehicle, then sets it up with options
 
 
 
@@ -547,9 +569,8 @@ spawnVehicle
 
 
 
-@description Creates and registers a vehicle, then sets it up with options
 @occurrences 12
-@example local veh = spawn.spawnVehicle(model, partConfig, pos, rot, opt)
+example:  local veh = spawn.spawnVehicle(model, partConfig, pos, rot, opt)
 
 
 ### spawn.teleportToLastRoad
@@ -566,6 +587,7 @@ function spawn.teleportToLastRoad(
 
 
 teleportToLastRoad
+Teleports a vehicle to its last recovery point on a nearby road
 
 
 
@@ -573,7 +595,6 @@ teleportToLastRoad
 
 
 
-@description Teleports a vehicle to its last recovery point on a nearby road
 @occurrences 4
 
 

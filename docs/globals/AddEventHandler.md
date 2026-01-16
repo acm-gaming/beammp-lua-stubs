@@ -21,4 +21,6 @@ function AddEventHandler(
 
 
 AddEventHandler
+Registers a callback for a named event
+example:  local id = AddEventHandler('onInit', function() log('I', 'init fired') end)
 

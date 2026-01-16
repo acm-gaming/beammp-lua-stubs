@@ -13,6 +13,7 @@
 ---@overload fun(className: "SimSet"): SimSet
 ---@overload fun(className: "Precipitation"): Precipitation
 ---@overload fun(className: "SFXEmitter"): SFXEmitter
+---@overload fun(className: "BeamNGVehicle"): BeamNGVehicle
 ---@overload fun(className: "TSStatic"): SceneObject
 ---@overload fun(className: "BeamNGTrigger"): SceneObject
 ---@overload fun(className: "Material"): SimObject

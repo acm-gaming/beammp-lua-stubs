@@ -35,6 +35,9 @@ function be.addObject(
     setTransform = function,
     getWorldBox = function,
     getObjBox = function,
+    setPositionRotation = function,
+    setVelocity = function,
+    setAngularVelocity = function,
 },
   dynamic: boolean
 ) ->  SceneObject?
@@ -51,6 +54,8 @@ function be.addObject(
 
 
 addObject
+Adds an object to the physics simulation
+example:  be:addObject(object, true)
 
 
 
@@ -58,8 +63,6 @@ addObject
 
 
 
-@description Adds an object to the physics simulation
-@example be:addObject(object, true)
 @occurrences 1
 
 
@@ -91,6 +94,8 @@ function be.castRay(
 
 
 castRay
+Casts a ray from origin to end point and returns hit information
+example:  local hit = be:castRay(pos, pos-vec3(0,0,13))
 
 
 
@@ -98,8 +103,6 @@ castRay
 
 
 
-@description Casts a ray from origin to end point and returns hit information
-@example local hit = be:castRay(pos, pos-vec3(0,0,13))
 @occurrences 4
 
 
@@ -121,6 +124,8 @@ function be.enterNextVehicle(
 
 
 enterNextVehicle
+Enters the next or previous vehicle in the sequence
+example:  be:enterNextVehicle(0, 1)
 
 
 
@@ -128,8 +133,6 @@ enterNextVehicle
 
 
 
-@description Enters the next or previous vehicle in the sequence
-@example be:enterNextVehicle(0, 1)
 @occurrences 3
 
 
@@ -151,6 +154,8 @@ function be.enterVehicle(
 
 
 enterVehicle
+Makes a player enter a specific vehicle
+example:  be:enterVehicle(0, playerVehicle)
 
 
 
@@ -158,8 +163,6 @@ enterVehicle
 
 
 
-@description Makes a player enter a specific vehicle
-@example be:enterVehicle(0, playerVehicle)
 @occurrences 43
 
 
@@ -176,6 +179,8 @@ function be.executeJS(jsCode: string) ->  nil
 
 
 executeJS
+Executes JavaScript code in the UI
+example:  be:executeJS("console.log('test')")
 
 
 
@@ -183,8 +188,6 @@ executeJS
 
 
 
-@description Executes JavaScript code in the UI
-@example be:executeJS("console.log('test')")
 @occurrences 2
 
 
@@ -201,6 +204,8 @@ function be.exitVehicle(player: integer) ->  boolean
 
 
 exitVehicle
+Makes a player exit their current vehicle
+example:  be:exitVehicle(0)
 
 
 
@@ -208,8 +213,6 @@ exitVehicle
 
 
 
-@description Makes a player exit their current vehicle
-@example be:exitVehicle(0)
 @occurrences 4
 
 
@@ -226,6 +229,8 @@ function be.getEnabled() ->  boolean
 
 
 getEnabled
+Returns whether the physics simulation is enabled
+example:  if be:getEnabled() then
 
 
 
@@ -233,8 +238,6 @@ getEnabled
 
 
 
-@description Returns whether the physics simulation is enabled
-@example if be:getEnabled() then
 @occurrences 13
 
 
@@ -251,6 +254,8 @@ function be.getEnterableObjectCount() ->  integer
 
 
 getEnterableObjectCount
+Returns the number of enterable objects (vehicles)
+example:  local count = be:getEnterableObjectCount()
 
 
 
@@ -258,8 +263,6 @@ getEnterableObjectCount
 
 
 
-@description Returns the number of enterable objects (vehicles)
-@example local count = be:getEnterableObjectCount()
 @occurrences 2
 
 
@@ -278,6 +281,8 @@ function be.getFFBConfig(deviceName: string) ->  table?
 
 
 getFFBConfig
+Gets the force feedback configuration for a device
+example:  local ffbConfig = be:getFFBConfig(deviceName)
 
 
 
@@ -285,8 +290,6 @@ getFFBConfig
 
 
 
-@description Gets the force feedback configuration for a device
-@example local ffbConfig = be:getFFBConfig(deviceName)
 @occurrences 1
 
 
@@ -303,6 +306,8 @@ function be.getFileStream() ->  table?
 
 
 getFileStream
+Gets the current file stream object
+example:  local stream = be:getFileStream()
 
 
 
@@ -310,8 +315,6 @@ getFileStream
 
 
 
-@description Gets the current file stream object
-@example local stream = be:getFileStream()
 @occurrences 2
 
 
@@ -330,6 +333,8 @@ function be.getGroundModelByID(modelID: integer) ->  table?
 
 
 getGroundModelByID
+Gets ground model data by its ID
+example:  local model = be:getGroundModelByID(modelID)
 
 
 
@@ -337,8 +342,6 @@ getGroundModelByID
 
 
 
-@description Gets ground model data by its ID
-@example local model = be:getGroundModelByID(modelID)
 @occurrences 1
 
 
@@ -355,6 +358,8 @@ function be.getGroundModelCount() ->  integer
 
 
 getGroundModelCount
+Returns the number of ground models
+example:  local count = be:getGroundModelCount()
 
 
 
@@ -362,8 +367,6 @@ getGroundModelCount
 
 
 
-@description Returns the number of ground models
-@example local count = be:getGroundModelCount()
 @occurrences 1
 
 
@@ -382,6 +385,8 @@ function be.getObject(index: integer) ->  SceneObject?
 
 
 getObject
+Gets a physics object by its index
+example:  local veh = be:getObject(i)
 
 
 
@@ -389,8 +394,6 @@ getObject
 
 
 
-@description Gets a physics object by its index
-@example local veh = be:getObject(i)
 @occurrences 23
 
 
@@ -409,6 +412,8 @@ function be.getObjectActive(objectID: integer) ->  boolean
 
 
 getObjectActive
+Checks if an object is active in the physics simulation
+example:  if be:getObjectActive(vehId) then
 
 
 
@@ -416,8 +421,6 @@ getObjectActive
 
 
 
-@description Checks if an object is active in the physics simulation
-@example if be:getObjectActive(vehId) then
 @occurrences 10
 
 
@@ -436,6 +439,8 @@ function be.getObjectByID(id: integer) ->  SceneObject?
 
 
 getObjectByID
+Gets a physics object by its ID
+example:  local veh = be:getObjectByID(vehId)
 
 
 
@@ -443,8 +448,6 @@ getObjectByID
 
 
 
-@description Gets a physics object by its ID
-@example local veh = be:getObjectByID(vehId)
 @occurrences 5
 
 
@@ -461,6 +464,8 @@ function be.getObjectCount() ->  integer
 
 
 getObjectCount
+Returns the number of physics objects
+example:  for i = 0, be:getObjectCount() - 1 do
 
 
 
@@ -468,8 +473,6 @@ getObjectCount
 
 
 
-@description Returns the number of physics objects
-@example for i = 0, be:getObjectCount() - 1 do
 @occurrences 30
 
 
@@ -492,6 +495,8 @@ function be.getObjectOOBBCenterXYZ(objectID: integer) ->  vec3 {
 
 
 getObjectOOBBCenterXYZ
+Gets the oriented bounding box center of an object
+example:  local center = be:getObjectOOBBCenterXYZ(objectID)
 
 
 
@@ -499,8 +504,6 @@ getObjectOOBBCenterXYZ
 
 
 
-@description Gets the oriented bounding box center of an object
-@example local center = be:getObjectOOBBCenterXYZ(objectID)
 @occurrences 2
 
 
@@ -528,6 +531,8 @@ function be.getObjectOOBBHalfAxisXYZ(
 
 
 getObjectOOBBHalfAxisXYZ
+Gets a half axis of the oriented bounding box
+example:  local axis = be:getObjectOOBBHalfAxisXYZ(objectID, 0)
 
 
 
@@ -535,8 +540,6 @@ getObjectOOBBHalfAxisXYZ
 
 
 
-@description Gets a half axis of the oriented bounding box
-@example local axis = be:getObjectOOBBHalfAxisXYZ(objectID, 0)
 @occurrences 2
 
 
@@ -559,6 +562,8 @@ function be.getObjectOOBBHalfExtentsXYZ(objectID: integer) ->  vec3 {
 
 
 getObjectOOBBHalfExtentsXYZ
+Gets the half extents of the oriented bounding box
+example:  local halfExtents = be:getObjectOOBBHalfExtentsXYZ(objectID)
 
 
 
@@ -566,8 +571,6 @@ getObjectOOBBHalfExtentsXYZ
 
 
 
-@description Gets the half extents of the oriented bounding box
-@example local halfExtents = be:getObjectOOBBHalfExtentsXYZ(objectID)
 @occurrences 3
 
 
@@ -586,6 +589,8 @@ function be.getObjectOOBBIsInitialized(objectID: integer) ->  boolean
 
 
 getObjectOOBBIsInitialized
+Checks if the oriented bounding box is initialized
+example:  if be:getObjectOOBBIsInitialized(objectID) then
 
 
 
@@ -593,8 +598,6 @@ getObjectOOBBIsInitialized
 
 
 
-@description Checks if the oriented bounding box is initialized
-@example if be:getObjectOOBBIsInitialized(objectID) then
 @occurrences 1
 
 
@@ -617,6 +620,8 @@ function be.getObjectPositionXYZ(objectID: integer) ->  vec3 {
 
 
 getObjectPositionXYZ
+Gets the position of an object
+example:  local pos = be:getObjectPositionXYZ(objectID)
 
 
 
@@ -624,15 +629,13 @@ getObjectPositionXYZ
 
 
 
-@description Gets the position of an object
-@example local pos = be:getObjectPositionXYZ(objectID)
 @occurrences 1
 
 
 ### be.getPlayerVehicle
 ---
 ```lua
-function be.getPlayerVehicle(player: integer) ->  SceneObject?
+function be.getPlayerVehicle(player: integer) ->  BeamNGVehicle?
 ```
 @param `player` - Player index (usually 0)
 
@@ -644,6 +647,8 @@ function be.getPlayerVehicle(player: integer) ->  SceneObject?
 
 
 getPlayerVehicle
+Gets the vehicle for a player
+example:  local veh = be:getPlayerVehicle(0)
 
 
 
@@ -651,8 +656,6 @@ getPlayerVehicle
 
 
 
-@description Gets the vehicle for a player
-@example local veh = be:getPlayerVehicle(0)
 @occurrences 26
 
 
@@ -671,6 +674,8 @@ function be.getPlayerVehicleID(player: integer) ->  integer
 
 
 getPlayerVehicleID
+Gets the vehicle ID for a player
+example:  local vehId = be:getPlayerVehicleID(0)
 
 
 
@@ -678,8 +683,6 @@ getPlayerVehicleID
 
 
 
-@description Gets the vehicle ID for a player
-@example local vehId = be:getPlayerVehicleID(0)
 @occurrences 185
 
 
@@ -706,6 +709,8 @@ function be.getSurfaceHeightBelow(
 
 
 getSurfaceHeightBelow
+Gets the height of the terrain surface below a point
+example:  local height = be:getSurfaceHeightBelow(pos.x, pos.y, pos.z)
 
 
 
@@ -713,8 +718,6 @@ getSurfaceHeightBelow
 
 
 
-@description Gets the height of the terrain surface below a point
-@example local height = be:getSurfaceHeightBelow(pos.x, pos.y, pos.z)
 @occurrences 21
 
 
@@ -738,6 +741,8 @@ function be.getTerrainDrivability(
 
 
 getTerrainDrivability
+Gets the drivability value of terrain at a position
+example:  local drivability = be:getTerrainDrivability(x, y)
 
 
 
@@ -745,8 +750,6 @@ getTerrainDrivability
 
 
 
-@description Gets the drivability value of terrain at a position
-@example local drivability = be:getTerrainDrivability(x, y)
 @occurrences 3
 
 
@@ -763,6 +766,8 @@ function be.getUpdateUIflag() ->  boolean
 
 
 getUpdateUIflag
+Gets the UI update flag
+example:  if be:getUpdateUIflag() then
 
 
 
@@ -770,8 +775,6 @@ getUpdateUIflag
 
 
 
-@description Gets the UI update flag
-@example if be:getUpdateUIflag() then
 @occurrences 1
 
 
@@ -790,6 +793,8 @@ function be.loadTireMarks(filepath: string) ->  boolean
 
 
 loadTireMarks
+Loads tire marks from a file
+example:  be:loadTireMarks(filepath)
 
 
 
@@ -797,8 +802,6 @@ loadTireMarks
 
 
 
-@description Loads tire marks from a file
-@example be:loadTireMarks(filepath)
 @occurrences 1
 
 
@@ -813,6 +816,8 @@ function be.physicsInitWorld() ->  nil
 
 
 physicsInitWorld
+Initializes the physics world
+example:  be:physicsInitWorld()
 
 
 
@@ -820,8 +825,6 @@ physicsInitWorld
 
 
 
-@description Initializes the physics world
-@example be:physicsInitWorld()
 @occurrences 1
 
 
@@ -836,6 +839,8 @@ function be.physicsStartSimulation() ->  nil
 
 
 physicsStartSimulation
+Starts the physics simulation
+example:  be:physicsStartSimulation()
 
 
 
@@ -843,8 +848,6 @@ physicsStartSimulation
 
 
 
-@description Starts the physics simulation
-@example be:physicsStartSimulation()
 @occurrences 1
 
 
@@ -861,6 +864,8 @@ function be.physicsStep(deltaTime: number) ->  nil
 
 
 physicsStep
+Steps the physics simulation forward
+example:  be:physicsStep(dt)
 
 
 
@@ -868,8 +873,6 @@ physicsStep
 
 
 
-@description Steps the physics simulation forward
-@example be:physicsStep(dt)
 @occurrences 1
 
 
@@ -884,6 +887,8 @@ function be.physicsStopSimulation() ->  nil
 
 
 physicsStopSimulation
+Stops the physics simulation
+example:  be:physicsStopSimulation()
 
 
 
@@ -891,8 +896,6 @@ physicsStopSimulation
 
 
 
-@description Stops the physics simulation
-@example be:physicsStopSimulation()
 @occurrences 2
 
 
@@ -909,6 +912,8 @@ function be.queueAllObjectLua(luaCode: string) ->  nil
 
 
 queueAllObjectLua
+Queues Lua code to execute on all physics objects
+example:  be:queueAllObjectLua("electrics.toggle_ignition()")
 
 
 
@@ -916,8 +921,6 @@ queueAllObjectLua
 
 
 
-@description Queues Lua code to execute on all physics objects
-@example be:queueAllObjectLua("electrics.toggle_ignition()")
 @occurrences 12
 
 
@@ -934,6 +937,8 @@ function be.queueHookJS(hookID: number) ->  nil
 
 
 queueHookJS
+Queues a JavaScript hook to be executed in the UI
+example:  be:queueHookJS(hookID)
 
 
 
@@ -941,8 +946,6 @@ queueHookJS
 
 
 
-@description Queues a JavaScript hook to be executed in the UI
-@example be:queueHookJS(hookID)
 @occurrences 1
 
 
@@ -959,6 +962,8 @@ function be.queueJS(jsCode: string) ->  nil
 
 
 queueJS
+Queues JavaScript code to be executed in the UI
+example:  be:queueJS("console.log('test')")
 
 
 
@@ -966,8 +971,6 @@ queueJS
 
 
 
-@description Queues JavaScript code to be executed in the UI
-@example be:queueJS("console.log('test')")
 @occurrences 2
 
 
@@ -984,6 +987,8 @@ function be.queueLuaCommand(luaCode: string) ->  nil
 
 
 queueLuaCommand
+Queues a Lua command to be executed
+example:  be:queueLuaCommand("partmgmt.loadLocal('" .. config .. "')")
 
 
 
@@ -991,8 +996,6 @@ queueLuaCommand
 
 
 
-@description Queues a Lua command to be executed
-@example be:queueLuaCommand("partmgmt.loadLocal('" .. config .. "')")
 @occurrences 2
 
 
@@ -1014,6 +1017,8 @@ function be.queueObjectFastLua(
 
 
 queueObjectFastLua
+Queues Lua code to execute on a specific object (fast path)
+example:  be:queueObjectFastLua(objectID, luaCode)
 
 
 
@@ -1021,8 +1026,6 @@ queueObjectFastLua
 
 
 
-@description Queues Lua code to execute on a specific object (fast path)
-@example be:queueObjectFastLua(objectID, luaCode)
 @occurrences 2
 
 
@@ -1044,6 +1047,8 @@ function be.queueObjectLua(
 
 
 queueObjectLua
+Queues Lua code to execute on a specific physics object
+example:  be:queueObjectLua(vehId, "extensions.myMod.callback()")
 
 
 
@@ -1051,8 +1056,6 @@ queueObjectLua
 
 
 
-@description Queues Lua code to execute on a specific physics object
-@example be:queueObjectLua(vehId, "extensions.myMod.callback()")
 @occurrences 68
 
 
@@ -1069,6 +1072,8 @@ function be.queueStreamDataJS(streamID: number) ->  nil
 
 
 queueStreamDataJS
+Queues stream data to be sent to JavaScript
+example:  be:queueStreamDataJS(streamID)
 
 
 
@@ -1076,8 +1081,6 @@ queueStreamDataJS
 
 
 
-@description Queues stream data to be sent to JavaScript
-@example be:queueStreamDataJS(streamID)
 @occurrences 1
 
 
@@ -1092,6 +1095,8 @@ function be.reloadAllVehicles() ->  nil
 
 
 reloadAllVehicles
+Reloads all vehicles in the simulation
+example:  be:reloadAllVehicles()
 
 
 
@@ -1099,8 +1104,6 @@ reloadAllVehicles
 
 
 
-@description Reloads all vehicles in the simulation
-@example be:reloadAllVehicles()
 @occurrences 1
 
 
@@ -1122,6 +1125,8 @@ function be.reloadCollision(
 
 
 reloadCollision
+Reloads collision data for the world
+example:  be:reloadCollision(true, true)
 
 
 
@@ -1129,8 +1134,6 @@ reloadCollision
 
 
 
-@description Reloads collision data for the world
-@example be:reloadCollision(true, true)
 @occurrences 45
 
 
@@ -1147,6 +1150,8 @@ function be.reloadVehicle(vehicleID: integer) ->  nil
 
 
 reloadVehicle
+Reloads a specific vehicle
+example:  be:reloadVehicle(vehId)
 
 
 
@@ -1154,8 +1159,6 @@ reloadVehicle
 
 
 
-@description Reloads a specific vehicle
-@example be:reloadVehicle(vehId)
 @occurrences 1
 
 
@@ -1170,6 +1173,8 @@ function be.resetGroundModels() ->  nil
 
 
 resetGroundModels
+Resets all ground models to defaults
+example:  be:resetGroundModels()
 
 
 
@@ -1177,8 +1182,6 @@ resetGroundModels
 
 
 
-@description Resets all ground models to defaults
-@example be:resetGroundModels()
 @occurrences 1
 
 
@@ -1193,6 +1196,8 @@ function be.resetTireMarks() ->  nil
 
 
 resetTireMarks
+Clears all tire marks from the world
+example:  be:resetTireMarks()
 
 
 
@@ -1200,8 +1205,6 @@ resetTireMarks
 
 
 
-@description Clears all tire marks from the world
-@example be:resetTireMarks()
 @occurrences 3
 
 
@@ -1218,6 +1221,8 @@ function be.resetVehicle(vehicleID: integer) ->  nil
 
 
 resetVehicle
+Resets a vehicle to its initial state
+example:  be:resetVehicle(vehId)
 
 
 
@@ -1225,8 +1230,6 @@ resetVehicle
 
 
 
-@description Resets a vehicle to its initial state
-@example be:resetVehicle(vehId)
 @occurrences 5
 
 
@@ -1245,6 +1248,8 @@ function be.saveTireMarks(filepath: string) ->  boolean
 
 
 saveTireMarks
+Saves tire marks to a file
+example:  be:saveTireMarks(filepath)
 
 
 
@@ -1252,8 +1257,6 @@ saveTireMarks
 
 
 
-@description Saves tire marks to a file
-@example be:saveTireMarks(filepath)
 @occurrences 1
 
 
@@ -1275,6 +1278,8 @@ function be.sendToMailbox(
 
 
 sendToMailbox
+Sends data to a named mailbox for inter-object communication
+example:  be:sendToMailbox("mapData", lpack.encodeBinWorkBuffer(data))
 
 
 
@@ -1282,8 +1287,6 @@ sendToMailbox
 
 
 
-@description Sends data to a named mailbox for inter-object communication
-@example be:sendToMailbox("mapData", lpack.encodeBinWorkBuffer(data))
 @occurrences 13
 
 
@@ -1302,6 +1305,8 @@ function be.setDynamicCollisionEnabled(enabled: boolean) ->  boolean
 
 
 setDynamicCollisionEnabled
+Enables or disables dynamic collision
+example:  be:setDynamicCollisionEnabled(true)
 
 
 
@@ -1309,8 +1314,6 @@ setDynamicCollisionEnabled
 
 
 
-@description Enables or disables dynamic collision
-@example be:setDynamicCollisionEnabled(true)
 @occurrences 5
 
 
@@ -1329,6 +1332,8 @@ function be.setEnabled(enabled: boolean) ->  boolean
 
 
 setEnabled
+Enables or disables the physics simulation
+example:  be:setEnabled(true)
 
 
 
@@ -1336,8 +1341,6 @@ setEnabled
 
 
 
-@description Enables or disables the physics simulation
-@example be:setEnabled(true)
 @occurrences 3
 
 
@@ -1359,6 +1362,8 @@ function be.setGroundModel(
 
 
 setGroundModel
+Sets properties of a ground model
+example:  be:setGroundModel(modelID, modelData)
 
 
 
@@ -1366,8 +1371,6 @@ setGroundModel
 
 
 
-@description Sets properties of a ground model
-@example be:setGroundModel(modelID, modelData)
 @occurrences 3
 
 
@@ -1384,6 +1387,8 @@ function be.setPhysicsRunning(running: boolean) ->  nil
 
 
 setPhysicsRunning
+Pauses or resumes physics simulation
+example:  be:setPhysicsRunning(true)
 
 
 
@@ -1391,8 +1396,6 @@ setPhysicsRunning
 
 
 
-@description Pauses or resumes physics simulation
-@example be:setPhysicsRunning(true)
 @occurrences 4
 
 
@@ -1409,6 +1412,8 @@ function be.setPhysicsSpeedFactor(speedFactor: number) ->  nil
 
 
 setPhysicsSpeedFactor
+Sets the physics simulation speed factor (1.0 = real time)
+example:  be:setPhysicsSpeedFactor(0.5)
 
 
 
@@ -1416,8 +1421,6 @@ setPhysicsSpeedFactor
 
 
 
-@description Sets the physics simulation speed factor (1.0 = real time)
-@example be:setPhysicsSpeedFactor(0.5)
 @occurrences 12
 
 
@@ -1434,6 +1437,8 @@ function be.setSeaLevelTemperatureK(temperatureK: number) ->  nil
 
 
 setSeaLevelTemperatureK
+Sets the sea level temperature in Kelvin
+example:  be:setSeaLevelTemperatureK(288.15)
 
 
 
@@ -1441,8 +1446,6 @@ setSeaLevelTemperatureK
 
 
 
-@description Sets the sea level temperature in Kelvin
-@example be:setSeaLevelTemperatureK(288.15)
 @occurrences 1
 
 
@@ -1459,6 +1462,8 @@ function be.setSimulationTimeScale(timeScale: number) ->  nil
 
 
 setSimulationTimeScale
+Sets the simulation time scale
+example:  be:setSimulationTimeScale(1.0)
 
 
 
@@ -1466,8 +1471,6 @@ setSimulationTimeScale
 
 
 
-@description Sets the simulation time scale
-@example be:setSimulationTimeScale(1.0)
 @occurrences 2
 
 
@@ -1484,6 +1487,8 @@ function be.sfxGetAvailableDevices() ->  table
 
 
 sfxGetAvailableDevices
+Gets a list of available audio devices
+example:  local devices = be:sfxGetAvailableDevices()
 
 
 
@@ -1491,8 +1496,6 @@ sfxGetAvailableDevices
 
 
 
-@description Gets a list of available audio devices
-@example local devices = be:sfxGetAvailableDevices()
 @occurrences 1
 
 
@@ -1509,6 +1512,8 @@ function be.toggleEnabled() ->  boolean
 
 
 toggleEnabled
+Toggles the physics simulation on or off
+example:  local newState = be:toggleEnabled()
 
 
 
@@ -1516,8 +1521,6 @@ toggleEnabled
 
 
 
-@description Toggles the physics simulation on or off
-@example local newState = be:toggleEnabled()
 @occurrences 1
 
 
@@ -1549,6 +1552,8 @@ function be.triggerRaycastClosest(
 
 
 triggerRaycastClosest
+Casts a ray and returns the closest hit
+example:  local hit = be:triggerRaycastClosest(origin, direction)
 
 
 
@@ -1556,8 +1561,6 @@ triggerRaycastClosest
 
 
 
-@description Casts a ray and returns the closest hit
-@example local hit = be:triggerRaycastClosest(origin, direction)
 @occurrences 2
 
 

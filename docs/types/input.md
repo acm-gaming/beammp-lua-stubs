@@ -69,6 +69,8 @@ function input.event(
 
 
 event
+Sends an input event to control vehicle inputs
+example:  input.event("steering", 0.5, FILTER_DIRECT, steeringWheelLock, 1, nil, "ai")
 
 
 
@@ -76,8 +78,6 @@ event
 
 
 
-@description Sends an input event to control vehicle inputs
-@example input.event("steering", 0.5, FILTER_DIRECT, steeringWheelLock, 1, nil, "ai")
 @occurrences 69
 
 
@@ -94,6 +94,8 @@ function input.getMouseInfo() ->  table
 
 
 getMouseInfo
+Gets current mouse position and button information
+example:  local mouseInfo = input.getMouseInfo()
 
 
 
@@ -101,8 +103,6 @@ getMouseInfo
 
 
 
-@description Gets current mouse position and button information
-@example local mouseInfo = input.getMouseInfo()
 @occurrences 5
 
 
@@ -270,6 +270,8 @@ function input.setAllowedInputSource(
 
 
 setAllowedInputSource
+Sets whether an input source is allowed for a specific action
+example:  input.setAllowedInputSource("mouse", "steering", true)
 
 
 
@@ -277,8 +279,6 @@ setAllowedInputSource
 
 
 
-@description Sets whether an input source is allowed for a specific action
-@example input.setAllowedInputSource("mouse", "steering", true)
 @occurrences 6
 
 
@@ -316,6 +316,8 @@ function input.toggleEvent(eventName: string) ->  nil
 
 
 toggleEvent
+Toggles an input event on/off
+example:  input.toggleEvent("pause")
 
 
 
@@ -323,8 +325,6 @@ toggleEvent
 
 
 
-@description Toggles an input event on/off
-@example input.toggleEvent("pause")
 @occurrences 1
 
 

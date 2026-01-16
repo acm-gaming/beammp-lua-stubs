@@ -26,6 +26,7 @@ function player.getFields() ->  table
 
 
 getFields
+Returns a table of field metadata for the player object
 
 
 
@@ -33,7 +34,6 @@ getFields
 
 
 
-@description Returns a table of field metadata for the player object
 @occurrences 1
 
 
@@ -65,7 +65,15 @@ getPosition
 ### player.getRefNodeMatrix
 ---
 ```lua
-function player.getRefNodeMatrix() ->  MatrixF
+function player.getRefNodeMatrix() ->  MatrixF {
+    getColumn = function,
+    setColumn = function,
+    mul = function,
+    inverse = function,
+    getPosition = function,
+    toEuler = function,
+    setFromEuler = function,
+}
 ```
 
 
@@ -73,6 +81,7 @@ function player.getRefNodeMatrix() ->  MatrixF
 
 
 getRefNodeMatrix
+Gets the reference node transform of the player object
 
 
 
@@ -80,7 +89,6 @@ getRefNodeMatrix
 
 
 
-@description Gets the reference node transform of the player object
 @occurrences 1
 
 

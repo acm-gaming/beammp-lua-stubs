@@ -51,4 +51,26 @@ function SceneObject:getWorldBox() end
 ---@return Box3F bbox The object-space bounding box
 function SceneObject:getObjBox() end
 
+--- Sets position and rotation in one call
+---@param x number Position X
+---@param y number Position Y
+---@param z number Position Z
+---@param rx number Rotation quaternion X
+---@param ry number Rotation quaternion Y
+---@param rz number Rotation quaternion Z
+---@param rw number Rotation quaternion W
+function SceneObject:setPositionRotation(x, y, z, rx, ry, rz, rw) end
+
+--- Sets the linear velocity of the object
+---@param x number Velocity X
+---@param y number Velocity Y
+---@param z number Velocity Z
+function SceneObject:setVelocity(x, y, z) end
+
+--- Sets the angular velocity of the object
+---@param x number Angular velocity X
+---@param y number Angular velocity Y
+---@param z number Angular velocity Z
+function SceneObject:setAngularVelocity(x, y, z) end
+
 return SceneObject

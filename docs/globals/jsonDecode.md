@@ -21,4 +21,6 @@ function jsonDecode(json: string)
 
 
 jsonDecode
+Parses a JSON string into the corresponding Lua value
+example:  local data = jsonDecode('{"foo":123}')
 

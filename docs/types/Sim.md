@@ -426,7 +426,11 @@ Gets all class names that derive from SimObject
 ```lua
 function Sim.decalRoadContainsPoint(
   roadId: integer,
-  point: Point3F
+  point: Point3F {
+    x = number,
+    y = number,
+    z = number,
+}
 ) -> contains boolean
 ```
 @param `roadId` - Decal road object ID

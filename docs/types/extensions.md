@@ -28,6 +28,8 @@ function extensions.addModulePath(directory: string) ->  nil
 
 
 addModulePath
+Adds a directory to the module search path for extensions
+example:  extensions.addModulePath('lua/ge/extensions/mymod')
 
 
 
@@ -35,8 +37,6 @@ addModulePath
 
 
 
-@description Adds a directory to the module search path for extensions
-@example extensions.addModulePath('lua/ge/extensions/mymod')
 @occurrences 6
 
 
@@ -58,6 +58,8 @@ function extensions.deserialize(
 
 
 deserialize
+Restores extension state from serialized data
+example:  extensions.deserialize(savedData)
 
 
 
@@ -65,8 +67,6 @@ deserialize
 
 
 
-@description Restores extension state from serialized data
-@example extensions.deserialize(savedData)
 @occurrences 1
 
 
@@ -83,6 +83,8 @@ function extensions.disableSerialization(...: (string|string[])) ->  nil
 
 
 disableSerialization
+Disables serialization for specified extensions
+example:  extensions.disableSerialization('myExtension')
 
 
 
@@ -90,8 +92,6 @@ disableSerialization
 
 
 
-@description Disables serialization for specified extensions
-@example extensions.disableSerialization('myExtension')
 @occurrences 1
 
 
@@ -110,6 +110,8 @@ function extensions.getLoadedExtensionsNames(excludeVirtual: boolean?) ->  table
 
 
 getLoadedExtensionsNames
+Gets list of currently loaded extension names
+example:  local names = extensions.getLoadedExtensionsNames()
 
 
 
@@ -117,8 +119,6 @@ getLoadedExtensionsNames
 
 
 
-@description Gets list of currently loaded extension names
-@example local names = extensions.getLoadedExtensionsNames()
 @occurrences 5
 
 
@@ -137,6 +137,8 @@ function extensions.getSerializationData(reason: string?) ->  table
 
 
 getSerializationData
+Gets serialization data for all extensions
+example:  local data = extensions.getSerializationData('reload')
 
 
 
@@ -144,8 +146,6 @@ getSerializationData
 
 
 
-@description Gets serialization data for all extensions
-@example local data = extensions.getSerializationData('reload')
 @occurrences 1
 
 
@@ -167,6 +167,8 @@ function extensions.hook(
 
 
 hook
+Calls a function on all loaded extensions that implement it
+example:  extensions.hook("onVehicleLoaded", retainDebug)
 
 
 
@@ -174,8 +176,6 @@ hook
 
 
 
-@description Calls a function on all loaded extensions that implement it
-@example extensions.hook("onVehicleLoaded", retainDebug)
 @occurrences 578
 
 
@@ -197,6 +197,8 @@ function extensions.hookNotify(
 
 
 hookNotify
+Calls a function on extensions without waiting for completion
+example:  extensions.hookNotify("onSettingsChanged")
 
 
 
@@ -204,8 +206,6 @@ hookNotify
 
 
 
-@description Calls a function on extensions without waiting for completion
-@example extensions.hookNotify("onSettingsChanged")
 @occurrences 3
 
 
@@ -222,6 +222,8 @@ function extensions.hookUpdate(funcName: string) ->  nil
 
 
 hookUpdate
+Calls an update function on extensions (optimized for frequent calls)
+example:  extensions.hookUpdate("updateGFX")
 
 
 
@@ -229,8 +231,6 @@ hookUpdate
 
 
 
-@description Calls an update function on extensions (optimized for frequent calls)
-@example extensions.hookUpdate("updateGFX")
 @occurrences 27
 
 
@@ -249,6 +249,8 @@ function extensions.isExtensionLoaded(extName: string) ->  boolean
 
 
 isExtensionLoaded
+Checks if an extension is currently loaded
+example:  if extensions.isExtensionLoaded('freeroam') then
 
 
 
@@ -256,8 +258,6 @@ isExtensionLoaded
 
 
 
-@description Checks if an extension is currently loaded
-@example if extensions.isExtensionLoaded('freeroam') then
 @occurrences 41
 
 
@@ -274,6 +274,8 @@ function extensions.load(module: string) ->  nil
 
 
 load
+Loads an extension module
+example:  extensions.load('tech/techCore')
 
 
 
@@ -281,8 +283,6 @@ load
 
 
 
-@description Loads an extension module
-@example extensions.load('tech/techCore')
 @occurrences 99
 
 
@@ -311,6 +311,8 @@ function extensions.loadAtRoot(
 
 
 loadAtRoot
+Loads an extension at a specific root namespace
+example:  local name, mod = extensions.loadAtRoot('path/to/ext', 'myRoot')
 
 
 
@@ -318,8 +320,6 @@ loadAtRoot
 
 
 
-@description Loads an extension at a specific root namespace
-@example local name, mod = extensions.loadAtRoot('path/to/ext', 'myRoot')
 @occurrences 2
 
 
@@ -341,6 +341,8 @@ function extensions.loadModulesInDirectory(
 
 
 loadModulesInDirectory
+Loads all extension modules in a directory
+example:  extensions.loadModulesInDirectory('lua/ge/extensions/mymod')
 
 
 
@@ -348,8 +350,6 @@ loadModulesInDirectory
 
 
 
-@description Loads all extension modules in a directory
-@example extensions.loadModulesInDirectory('lua/ge/extensions/mymod')
 @occurrences 2
 
 
@@ -368,6 +368,8 @@ function extensions.luaPathToExtName(filepath: string) ->  string?
 
 
 luaPathToExtName
+Converts a Lua file path to extension name format
+example:  local extName = extensions.luaPathToExtName('lua/ge/extensions/mymod/init.lua')
 
 
 
@@ -375,8 +377,6 @@ luaPathToExtName
 
 
 
-@description Converts a Lua file path to extension name format
-@example local extName = extensions.luaPathToExtName('lua/ge/extensions/mymod/init.lua')
 @occurrences 3
 
 
@@ -393,6 +393,8 @@ function extensions.refresh(extName: string) ->  nil
 
 
 refresh
+Refreshes an extension by reloading it
+example:  extensions.refresh('freeroam')
 
 
 
@@ -400,8 +402,6 @@ refresh
 
 
 
-@description Refreshes an extension by reloading it
-@example extensions.refresh('freeroam')
 @occurrences 5
 
 
@@ -418,6 +418,8 @@ function extensions.reload(extPath: string) ->  nil
 
 
 reload
+Reloads an extension from disk
+example:  extensions.reload('core/vehicles')
 
 
 
@@ -425,8 +427,6 @@ reload
 
 
 
-@description Reloads an extension from disk
-@example extensions.reload('core/vehicles')
 @occurrences 1
 
 
@@ -448,6 +448,8 @@ function extensions.setCompletedCallback(
 
 
 setCompletedCallback
+Sets a callback to be called when a hook function completes
+example:  extensions.setCompletedCallback('onInit', myCallback)
 
 
 
@@ -455,8 +457,6 @@ setCompletedCallback
 
 
 
-@description Sets a callback to be called when a hook function completes
-@example extensions.setCompletedCallback('onInit', myCallback)
 @occurrences 1
 
 
@@ -473,6 +473,8 @@ function extensions.setProfiler(profiler: table?) ->  nil
 
 
 setProfiler
+Sets the profiler for extension hook timing
+example:  extensions.setProfiler(myProfiler)
 
 
 
@@ -480,8 +482,6 @@ setProfiler
 
 
 
-@description Sets the profiler for extension hook timing
-@example extensions.setProfiler(myProfiler)
 @occurrences 2
 
 
@@ -498,6 +498,8 @@ function extensions.unload(extName: (string|table)) ->  nil
 
 
 unload
+Unloads an extension or list of extensions
+example:  extensions.unload('freeroam')
 
 
 
@@ -505,8 +507,6 @@ unload
 
 
 
-@description Unloads an extension or list of extensions
-@example extensions.unload('freeroam')
 @occurrences 42
 
 
@@ -523,6 +523,8 @@ function extensions.unloadExcept(...: (string|string[])) ->  nil
 
 
 unloadExcept
+Unloads all extensions except specified ones
+example:  extensions.unloadExcept('core', 'ui')
 
 
 
@@ -530,8 +532,6 @@ unloadExcept
 
 
 
-@description Unloads all extensions except specified ones
-@example extensions.unloadExcept('core', 'ui')
 @occurrences 2
 
 

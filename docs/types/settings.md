@@ -70,6 +70,8 @@ function settings.getUsedMaterialNames() ->  table
 
 
 getUsedMaterialNames
+Returns a list of material names currently in use
+example:  local materialsUsed = settings.getUsedMaterialNames()
 
 
 
@@ -77,8 +79,6 @@ getUsedMaterialNames
 
 
 
-@description Returns a list of material names currently in use
-@example local materialsUsed = settings.getUsedMaterialNames()
 @occurrences 2
 
 
@@ -102,6 +102,8 @@ function settings.getValue(
 
 
 getValue
+Gets a setting value by key, returning defaultValue if not set
+example:  local target = settings.getValue('uiUnitLength')
 
 
 
@@ -109,8 +111,6 @@ getValue
 
 
 
-@description Gets a setting value by key, returning defaultValue if not set
-@example local target = settings.getValue('uiUnitLength')
 @occurrences 256
 
 
@@ -302,6 +302,8 @@ function settings.settingsChanged() ->  nil
 
 
 settingsChanged
+Invalidates settings cache, called when settings change
+example:  settings.settingsChanged()
 
 
 
@@ -309,8 +311,6 @@ settingsChanged
 
 
 
-@description Invalidates settings cache, called when settings change
-@example settings.settingsChanged()
 @occurrences 1
 
 
@@ -350,6 +350,8 @@ function settings.updateMaterials() ->  nil
 
 
 updateMaterials
+Updates the materials map for the current vehicle
+example:  settings.updateMaterials()
 
 
 
@@ -357,8 +359,6 @@ updateMaterials
 
 
 
-@description Updates the materials map for the current vehicle
-@example settings.updateMaterials()
 @occurrences 2
 
 
@@ -373,6 +373,7 @@ function settings.write() ->  nil
 
 
 write
+Writes settings to persistent storage
 
 
 
@@ -380,7 +381,6 @@ write
 
 
 
-@description Writes settings to persistent storage
 @occurrences 2
 
 
